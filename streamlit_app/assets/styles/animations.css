@@ -1,0 +1,72 @@
+/* BUTTON */
+
+.stButton>button {
+
+    transition: .25s;
+
+}
+
+.stButton>button:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+
+        0 8px 25px rgba(124, 97, 255, .35);
+
+}
+
+
+/* METRIC */
+
+div[data-testid="metric-container"] {
+
+    transition: .25s;
+
+}
+
+div[data-testid="metric-container"]:hover {
+
+    transform: translateY(-4px);
+
+    border-color: #7B61FF;
+
+}
+
+
+/* EXPANDER */
+
+details {
+
+    transition: .2s;
+
+}
+
+/* ==========================================================
+   BADGE
+========================================================== */
+
+.genre-badge {
+
+    transition: .25s;
+
+}
+
+.genre-badge:hover {
+
+    transform: translateY(-2px);
+
+    border-color: #7B61FF;
+
+}
+
+
+/* ==========================================================
+   SCORE BAR
+========================================================== */
+
+.score-fill {
+
+    transition: width .6s ease;
+
+}
