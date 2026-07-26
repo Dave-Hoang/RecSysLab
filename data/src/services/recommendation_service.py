@@ -6,61 +6,58 @@ from typing import Any
 
 import pandas as pd
 from langchain_community.vectorstores import FAISS
+from langchain_core.vectorstores import VectorStoreRetriever
 
 from src.config import (
     FAISS_REFACTORED_INDEX_DIR,
     FINAL_RECOMMENDATION_TOP_K,
     RETRIEVAL_TOP_K,
 )
-from src.generation.explanation_chain import explain_ranked_movies
-from src.ranking.hybrid_ranker import rank_movies
+from src.evaluation.ranking_configurations import (
+    rank_with_configuration,
+)
+from src.generation.explanation_chain import (
+    explain_ranked_movies,
+)
 from src.retrieval.embeddings import load_embedding_model
+from src.retrieval.retriever import retrieve_movies
 from src.retrieval.vector_store import load_vector_store
 
 
-@dataclass
-class RecommendationResult:
-    """
-    Kết quả cuối cùng của recommendation service.
+SUPPORTED_CONFIGURATIONS = {
+    "faiss_only",
+    "hybrid_no_ce",
+    "cross_encoder_only",
+    "hybrid_with_ce",
+}
 
-    Attributes:
-        query:
-            Query gốc của người dùng.
-        recommendations:
-            Danh sách phim đã được ranking.
-        explanation:
-            Markdown explanation do LLM tạo.
-        timings:
-            Thời gian chạy của từng giai đoạn.
-    """
+
+@dataclass(frozen=True)
+class RecommendationResult:
+    """Kết quả cuối cùng của recommendation pipeline."""
 
     query: str
+    configuration: str
     recommendations: list[dict[str, Any]]
-    explanation: str
     timings: dict[str, float]
 
     def to_dict(self) -> dict[str, Any]:
-        """
-        Chuyển kết quả thành dictionary để dùng cho FastAPI hoặc Streamlit.
-        """
+        """Chuyển kết quả thành dictionary JSON-friendly."""
+
         return {
             "query": self.query,
+            "configuration": self.configuration,
             "recommendations": self.recommendations,
-            "explanation": self.explanation,
             "timings": self.timings,
         }
 
 
 class RecommendationService:
     """
-    Service điều phối toàn bộ movie recommendation pipeline.
+    Điều phối retrieval, ranking và explanation.
 
-    Service chịu trách nhiệm:
-    - load embedding model một lần;
-    - load FAISS index một lần;
-    - gọi tầng ranking;
-    - gọi tầng generation;
-    - trả kết quả có cấu trúc.
+    Embedding model, FAISS index và retriever được khởi tạo
+    một lần khi service bắt đầu, không load lại ở mỗi request.
     """
 
     def __init__(
@@ -69,45 +66,56 @@ class RecommendationService:
         retrieval_k: int = RETRIEVAL_TOP_K,
         top_n: int = FINAL_RECOMMENDATION_TOP_K,
     ) -> None:
-        """
-        Khởi tạo RecommendationService.
+        self.retrieval_k = self._validate_positive_integer(
+            value=retrieval_k,
+            field_name="retrieval_k",
+        )
+        self.top_n = self._validate_positive_integer(
+            value=top_n,
+            field_name="top_n",
+        )
 
-        Args:
-            vector_store:
-                FAISS vector store đã load sẵn.
-                Nếu None, service sẽ tự load.
-            retrieval_k:
-                Số candidates lấy từ FAISS.
-            top_n:
-                Số phim cuối cùng trả về.
-        """
-        if retrieval_k <= 0:
-            raise ValueError("retrieval_k phải lớn hơn 0.")
-
-        if top_n <= 0:
-            raise ValueError("top_n phải lớn hơn 0.")
-
-        if top_n > retrieval_k:
+        if self.top_n > self.retrieval_k:
             raise ValueError(
-                "top_n không được lớn hơn retrieval_k."
+                "top_n không được lớn hơn retrieval_k. "
+                f"Nhận được top_n={self.top_n}, "
+                f"retrieval_k={self.retrieval_k}."
             )
 
-        self.retrieval_k = retrieval_k
-        self.top_n = top_n
+        self.vector_store = (
+            vector_store
+            if vector_store is not None
+            else self._initialize_vector_store()
+        )
 
-        if vector_store is None:
-            self.vector_store = self._initialize_vector_store()
-        else:
-            self.vector_store = vector_store
+        self.retriever = self._create_retriever(
+            vector_store=self.vector_store,
+            retrieval_k=self.retrieval_k,
+        )
+
+    @staticmethod
+    def _validate_positive_integer(
+        value: int,
+        field_name: str,
+    ) -> int:
+        """Kiểm tra một giá trị phải là số nguyên dương."""
+
+        if isinstance(value, bool) or not isinstance(value, int):
+            raise TypeError(
+                f"{field_name} phải là số nguyên."
+            )
+
+        if value <= 0:
+            raise ValueError(
+                f"{field_name} phải lớn hơn 0."
+            )
+
+        return value
 
     @staticmethod
     def _initialize_vector_store() -> FAISS:
-        """
-        Load embedding model và FAISS index.
+        """Load embedding model và FAISS index một lần."""
 
-        Hàm này chỉ được gọi khi service được khởi tạo,
-        không chạy lại ở mỗi query.
-        """
         print("[Service] Đang load embedding model...")
 
         embedding_model = load_embedding_model()
@@ -124,44 +132,145 @@ class RecommendationService:
         return vector_store
 
     @staticmethod
+    def _create_retriever(
+        vector_store: FAISS,
+        retrieval_k: int,
+    ) -> VectorStoreRetriever:
+        """Tạo retriever từ FAISS vector store."""
+
+        return vector_store.as_retriever(
+            search_kwargs={
+                "k": retrieval_k,
+            }
+        )
+
+    @staticmethod
     def _validate_query(query: str) -> str:
-        """
-        Kiểm tra và chuẩn hóa query.
+        """Kiểm tra và chuẩn hóa query."""
 
-        Returns:
-            Query đã strip khoảng trắng.
-
-        Raises:
-            TypeError:
-                Nếu query không phải string.
-            ValueError:
-                Nếu query rỗng.
-        """
         if not isinstance(query, str):
             raise TypeError("Query phải là chuỗi.")
 
         cleaned_query = query.strip()
 
         if not cleaned_query:
-            raise ValueError("Query không được để trống.")
+            raise ValueError(
+                "Query không được để trống."
+            )
+
+        if len(cleaned_query) > 500:
+            raise ValueError(
+                "Query không được dài quá 500 ký tự."
+            )
 
         return cleaned_query
+
+    def _resolve_top_n(
+        self,
+        top_n: int | None,
+    ) -> int:
+        """Kiểm tra số lượng kết quả cuối cùng."""
+
+        selected_top_n = (
+            self.top_n
+            if top_n is None
+            else top_n
+        )
+
+        selected_top_n = self._validate_positive_integer(
+            value=selected_top_n,
+            field_name="top_n",
+        )
+
+        if selected_top_n > self.retrieval_k:
+            raise ValueError(
+                "top_n không được lớn hơn retrieval_k "
+                f"({self.retrieval_k}). "
+                f"Giá trị nhận được: {selected_top_n}."
+            )
+
+        return selected_top_n
+
+    @staticmethod
+    def _validate_configuration(
+        configuration: str,
+    ) -> str:
+        """Kiểm tra ranking configuration."""
+
+        if not isinstance(configuration, str):
+            raise TypeError(
+                "configuration phải là chuỗi."
+            )
+
+        cleaned_configuration = configuration.strip()
+
+        if cleaned_configuration not in SUPPORTED_CONFIGURATIONS:
+            allowed_configurations = ", ".join(
+                sorted(SUPPORTED_CONFIGURATIONS)
+            )
+
+            raise ValueError(
+                "Ranking configuration không hợp lệ: "
+                f"{cleaned_configuration!r}. "
+                "Các configuration được hỗ trợ: "
+                f"{allowed_configurations}."
+            )
+
+        return cleaned_configuration
+
+    @staticmethod
+    def _normalize_ranked_columns(
+        ranked_movies: pd.DataFrame,
+    ) -> pd.DataFrame:
+        """
+        Chuẩn hóa tên cột giữa evaluation và service output.
+
+        Evaluation sử dụng:
+            result_rank
+            evaluation_score
+
+        Service hoặc explanation chain có thể sử dụng:
+            final_rank
+            final_score
+        """
+
+        normalized = ranked_movies.copy()
+
+        if (
+            "result_rank" in normalized.columns
+            and "final_rank" not in normalized.columns
+        ):
+            normalized["final_rank"] = normalized[
+                "result_rank"
+            ]
+
+        if (
+            "evaluation_score" in normalized.columns
+            and "final_score" not in normalized.columns
+        ):
+            normalized["final_score"] = normalized[
+                "evaluation_score"
+            ]
+
+        return normalized
 
     @staticmethod
     def _dataframe_to_records(
         ranked_movies: pd.DataFrame,
     ) -> list[dict[str, Any]]:
-        """
-        Chuyển ranked DataFrame thành list dictionary.
+        """Chuyển DataFrame thành dữ liệu JSON-friendly."""
 
-        Dữ liệu này phù hợp để serialize thành JSON.
-        """
         if ranked_movies.empty:
             return []
 
         safe_frame = ranked_movies.copy()
 
         numeric_columns = [
+            "movieId",
+            "rank",
+            "retrieval_rank",
+            "result_rank",
+            "final_rank",
             "rating_mean",
             "rating_count",
             "faiss_distance",
@@ -169,10 +278,8 @@ class RecommendationService:
             "popularity_score",
             "rule_score",
             "cross_encoder_score",
+            "evaluation_score",
             "final_score",
-            "rank",
-            "final_rank",
-            "movieId",
         ]
 
         for column in numeric_columns:
@@ -182,107 +289,192 @@ class RecommendationService:
                     errors="coerce",
                 )
 
-        safe_frame = safe_frame.where(
+        # Thay NaN và pandas.NA bằng None để FastAPI có thể
+        # serialize thành JSON null.
+        safe_frame = safe_frame.astype(object).where(
             pd.notna(safe_frame),
             None,
         )
 
-        return safe_frame.to_dict(orient="records")
+        return safe_frame.to_dict(
+            orient="records",
+        )
+
+    def _retrieve_candidates(
+        self,
+        query: str,
+    ) -> pd.DataFrame:
+        """Lấy candidate từ retriever và chuyển thành DataFrame."""
+
+        candidates = retrieve_movies(
+            retriever=self.retriever,
+            query=query,
+        )
+
+        if not isinstance(candidates, list):
+            raise TypeError(
+                "retrieve_movies() phải trả về list[dict]. "
+                f"Kiểu thực tế: {type(candidates).__name__}."
+            )
+
+        candidates_dataframe = pd.DataFrame(candidates)
+
+        if candidates_dataframe.empty:
+            raise RuntimeError(
+                "Retriever không trả về candidate nào."
+            )
+
+        if "title" not in candidates_dataframe.columns:
+            raise RuntimeError(
+                "Candidate retrieval thiếu cột bắt buộc: title."
+            )
+
+        return candidates_dataframe
 
     def rank(
         self,
         query: str,
+        configuration: str = "hybrid_with_ce",
+        top_n: int | None = None,
     ) -> pd.DataFrame:
         """
-        Chạy retrieval và ranking, chưa gọi LLM.
+        Chạy retrieval và ranking nhưng chưa gọi LLM.
 
-        Hữu ích cho:
-        - debugging;
-        - evaluation;
-        - benchmark;
-        - API chỉ cần kết quả phim.
+        Luồng xử lý:
+            query
+            → FAISS retrieval
+            → ranking theo configuration
+            → Top-N
         """
+
         cleaned_query = self._validate_query(query)
 
-        return rank_movies(
-            vector_store=self.vector_store,
+        selected_configuration = (
+            self._validate_configuration(configuration)
+        )
+
+        selected_top_n = self._resolve_top_n(top_n)
+
+        candidates_dataframe = self._retrieve_candidates(
             query=cleaned_query,
-            retrieval_k=self.retrieval_k,
-            top_n=self.top_n,
+        )
+
+        ranked_movies = rank_with_configuration(
+            query=cleaned_query,
+            candidates=candidates_dataframe.copy(),
+            configuration=selected_configuration,
+            top_k=selected_top_n,
+        )
+
+        if not isinstance(ranked_movies, pd.DataFrame):
+            raise TypeError(
+                "rank_with_configuration() phải trả về "
+                "pandas.DataFrame."
+            )
+
+        if ranked_movies.empty:
+            raise RuntimeError(
+                "Ranking pipeline không trả về kết quả."
+            )
+
+        if len(ranked_movies) > selected_top_n:
+            ranked_movies = ranked_movies.head(
+                selected_top_n
+            )
+
+        return self._normalize_ranked_columns(
+            ranked_movies
         )
 
     def recommend(
         self,
         query: str,
         include_explanation: bool = True,
+        configuration: str = "hybrid_with_ce",
+        top_n: int | None = None,
     ) -> RecommendationResult:
         """
-        Chạy pipeline recommendation hoàn chỉnh.
+        Chạy recommendation pipeline hoàn chỉnh.
 
-        Pipeline:
+        Luồng xử lý:
             query
             → FAISS retrieval
-            → hybrid reranking
-            → Top-N movies
-            → Gemini explanation
-
-        Args:
-            query:
-                Query của người dùng.
-            include_explanation:
-                Nếu False, chỉ trả recommendations và bỏ qua LLM.
-
-        Returns:
-            RecommendationResult có cấu trúc.
+            → ranking theo configuration
+            → Top-N
+            → optional Gemini explanation
         """
+
         cleaned_query = self._validate_query(query)
 
-        total_start = perf_counter()
-
-        ranking_start = perf_counter()
-
-        ranked_movies = rank_movies(
-            vector_store=self.vector_store,
-            query=cleaned_query,
-            retrieval_k=self.retrieval_k,
-            top_n=self.top_n,
+        selected_configuration = (
+            self._validate_configuration(configuration)
         )
 
-        ranking_time = perf_counter() - ranking_start
+        selected_top_n = self._resolve_top_n(top_n)
+
+        if not isinstance(include_explanation, bool):
+            raise TypeError(
+                "include_explanation phải là boolean."
+            )
+
+        total_start = perf_counter()
+        ranking_start = perf_counter()
+
+        ranked_movies = self.rank(
+            query=cleaned_query,
+            configuration=selected_configuration,
+            top_n=selected_top_n,
+        )
+
+        ranking_seconds = (
+            perf_counter() - ranking_start
+        )
 
         explanation = ""
-        generation_time = 0.0
+        generation_seconds = 0.0
 
         if include_explanation:
             generation_start = perf_counter()
 
-            explanation = explain_ranked_movies(
+            generated_explanations = explain_ranked_movies(
                 query=cleaned_query,
                 ranked_movies=ranked_movies,
             )
 
-            generation_time = (
+            ranked_movies = ranked_movies.copy()
+
+            ranked_movies["explanation"] = generated_explanations
+
+            generation_seconds = (
                 perf_counter() - generation_start
             )
 
-        total_time = perf_counter() - total_start
+        total_seconds = (
+            perf_counter() - total_start
+        )
 
         recommendations = self._dataframe_to_records(
             ranked_movies
         )
 
         timings = {
-            "ranking_seconds": round(ranking_time, 4),
-            "generation_seconds": round(
-                generation_time,
+            "ranking_seconds": round(
+                ranking_seconds,
                 4,
             ),
-            "total_seconds": round(total_time, 4),
+            "generation_seconds": round(
+                generation_seconds,
+                4,
+            ),
+            "total_seconds": round(
+                total_seconds,
+                4,
+            ),
         }
 
         return RecommendationResult(
             query=cleaned_query,
+            configuration=selected_configuration,
             recommendations=recommendations,
-            explanation=explanation,
             timings=timings,
         )
