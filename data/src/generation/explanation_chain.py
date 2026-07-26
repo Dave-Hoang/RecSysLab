@@ -1,4 +1,5 @@
 import os
+import json
 
 import pandas as pd
 from dotenv import load_dotenv
@@ -213,6 +214,11 @@ def build_explanation_chain():
 
     prompt = create_explanation_prompt()
 
+    print("=" * 80)
+    print(prompt.input_variables)
+    print("=" * 80)
+    print(prompt.messages[0].prompt.template)
+    
     _explanation_chain = (
         prompt | llm | StrOutputParser()
     )
@@ -225,7 +231,7 @@ def build_explanation_chain():
 def explain_ranked_movies(
     query: str,
     ranked_movies: pd.DataFrame,
-) -> str:
+) -> list[str]:
     """
     Tạo lời giải thích cho danh sách phim đã được ranking.
 
@@ -242,7 +248,7 @@ def explain_ranked_movies(
             Top-N DataFrame từ tầng ranking.
 
     Returns:
-        Markdown explanation từ LLM.
+        Danh sách explanation tương ứng với từng movie.
     """
     cleaned_query = query.strip()
 
@@ -250,10 +256,7 @@ def explain_ranked_movies(
         raise ValueError("Query không được để trống.")
 
     if ranked_movies.empty:
-        return (
-            "Không tìm thấy phim phù hợp với yêu cầu của bạn "
-            "trong kho dữ liệu hiện tại."
-        )
+        return []
 
     context = format_movies_for_llm(ranked_movies)
 
@@ -278,4 +281,47 @@ def explain_ranked_movies(
             "LLM trả về nội dung rỗng."
         )
 
-    return cleaned_response
+    # Gemini đôi khi bọc JSON trong ```json ... ```
+    if cleaned_response.startswith("```"):
+        cleaned_response = (
+            cleaned_response
+            .replace("```json", "")
+            .replace("```", "")
+            .strip()
+        )
+
+    try:
+        parsed = json.loads(cleaned_response)
+
+    except json.JSONDecodeError as exc:
+        raise RuntimeError(
+            "LLM không trả về JSON hợp lệ."
+        ) from exc
+
+    if not isinstance(parsed, list):
+        raise RuntimeError(
+            "LLM phải trả về một JSON array."
+        )
+
+    explanations: list[str] = []
+
+    for item in parsed:
+        if not isinstance(item, dict):
+            raise RuntimeError(
+                "Mỗi phần tử trong Json phải là object"
+            )
+        if "explanation" not in item:
+            raise RuntimeError(
+                "Thiếu trường 'explanation' trong phản hồi của LLM."
+            )
+        
+        explanation = str(item["explanation"]).strip()
+
+        explanations.append(explanation)
+
+    if len(explanations) != len(ranked_movies):
+        raise RuntimeError(
+            "Số lượng explanation không khớp với số lượng movie đã ranking."
+        ) 
+
+    return explanations
