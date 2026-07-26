@@ -1,0 +1,47 @@
+version: 1
+
+application:
+  name: movie-recommendation-system
+  environment: production
+
+default_mode: quality
+
+modes:
+  quality:
+    configuration: hybrid_with_ce
+    description: >
+      Highest-quality mode using FAISS candidate retrieval,
+      hybrid scoring, and Cross-Encoder reranking.
+    use_cross_encoder: true
+    use_hybrid_ranking: true
+
+  fast:
+    configuration: hybrid_no_ce
+    description: >
+      Lower-latency mode using FAISS retrieval and hybrid ranking
+      without Cross-Encoder inference.
+    use_cross_encoder: false
+    use_hybrid_ranking: true
+
+retrieval:
+  candidate_k: 20
+  default_top_k: 5
+  min_top_k: 1
+  max_top_k: 20
+
+generation:
+  default_include_explanation: true
+
+evaluation:
+  primary_metric: ndcg_at_5
+  benchmark_query_count: 30
+  evaluation_top_k: 5
+
+  selected_configuration:
+    name: hybrid_with_ce
+    precision_at_5: 0.9133
+    ndcg_at_5: 0.8284
+    mrr_at_5: 0.9500
+    mrr_strong_at_5: 0.8844
+    irrelevant_at_5: 0.4333
+    mean_relevance_at_5: 1.6267
