@@ -36,12 +36,12 @@ try:
         else "🔴 Not Loaded"
     )
     default_mode = health_data.get("default_mode", "quality").upper()
-    llm_model = "Gemini 2.5 Flash"
+    llm_model = "Gemini 3.5 Flash Lite"
 except Exception:
     backend_status = "🔴 Offline"
     vector_store_status = "⚠️ Unknown"
     default_mode = "QUALITY"
-    llm_model = "Gemini 2.5 Flash"
+    llm_model = "Gemini 3.5 Flash Lite"
 
 col_s1, col_s2, col_s3, col_s4 = st.columns(4)
 

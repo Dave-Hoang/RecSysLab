@@ -78,7 +78,7 @@ ONLINE_PIPELINE_DIAGRAM = """
 [3. Weighted Fusion & Sorting]
        │  Compute Final Score ──► Sort descending ──► Top-N Movies
        ▼
-[4. LLM Explanation Generation (Gemini 2.5 Flash)]
+[4. LLM Explanation Generation (Gemini 3.5 Flash Lite)]
        │  Format Top-N context ──► Prompt ──► Structured JSON Explanations
        ▼
 [Recommendation Response Payload] (Movies + Scores + Explanations + Timings)
@@ -130,7 +130,7 @@ WEIGHT_DESCRIPTIONS = [
 # ============================================================
 
 LLM_PROMPT_ARCH = {
-    "model": "Google Gemini 2.5 Flash",
+    "model": "Google Gemini 3.5 Flash Lite",
     "temperature": 0.2,
     "system_prompt": """You are an expert movie recommendation assistant.
 Your task is to explain why each ranked movie matches the user's request.

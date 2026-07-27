@@ -62,33 +62,16 @@ if submitted:
 
     else:
 
-        status = st.status(
-            "Generating recommendations...",
-            expanded=True,
-        )
-
-        status.write("🔍 Searching semantic candidates...")
-
         try:
             clear_animation_state()
-            
-            response = api_client.recommend(
-                query=query,
-                mode=mode,
-                top_k=top_k,
-                include_explanation=include_explanation,
-            )
 
-            status.write("⚖️ Ranking retrieved movies...")
-
-            if include_explanation:
-
-                status.write("🤖 Generating AI explanations...")
-
-            status.update(
-                label="✅ Recommendation completed",
-                state="complete",
-            )
+            with st.spinner("Generating recommendations..."):
+                response = api_client.recommend(
+                    query=query,
+                    mode=mode,
+                    top_k=top_k,
+                    include_explanation=include_explanation,
+                )
 
             recommendations = response.get(
                 "recommendations",
@@ -121,9 +104,6 @@ if submitted:
 
         except Exception as e:
 
-            status.update(
-                label="❌ Recommendation failed",
-                state="error",
-            )
+            st.error("Recommendation failed")
 
             st.exception(e)

@@ -124,7 +124,7 @@ WEIGHT_RULE = 0.10
 # LLM / GENERATION CONFIG
 # ============================================================
 
-GEMINI_MODEL_NAME = "gemini-2.5-flash"
+GEMINI_MODEL_NAME = "gemini-3.5-flash-lite"
 LLM_TEMPERATURE = 0.2
 
 GOOGLE_API_KEY_ENV_NAME = "GOOGLE_API_KEY"
