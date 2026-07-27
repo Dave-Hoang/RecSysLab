@@ -98,7 +98,7 @@ $$\text{Final Score} = \alpha \cdot S_{\text{Cross-Encoder}} + \beta \cdot S_{\t
 Where:
 * **$\alpha$**: Weight assigned to Cross-Encoder pairwise relevance score ($S_{\text{Cross-Encoder}}$), computed via `BAAI/bge-reranker-v2-m3`.
 * **$\beta$**: Weight assigned to Dense Semantic similarity score ($S_{\text{Semantic}}$), derived from normalized cosine distance in 1024-dim embedding space (`BAAI/bge-m3` + FAISS).
-* **$\gamma$**: Weight assigned to Movie Popularity score ($S_{\text{Popularity}}$), normalized via $\text{rating\_mean} \times \log(1 + \text{rating\_count})$.
+* **$\gamma$**: Weight assigned to Movie Popularity score ($S_{\text{Popularity}}$), normalized via `rating_mean * log(1 + rating_count)`.
 * **$\delta$**: Weight assigned to Rule-Based Genre score ($S_{\text{Rule}}$), heuristic keyword boosting/penalizing for constraint handling.
 
 ---
