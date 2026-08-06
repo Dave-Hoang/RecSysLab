@@ -35,6 +35,7 @@ from components.evaluation import (
     render_case_study_viewer,
     render_findings_card,
     render_hero_card,
+    render_llm_explanation_card,
     render_metrics_grid,
 )
 
@@ -122,6 +123,11 @@ render_case_study_viewer(
     bundle.per_query,
     bundle.scored_predictions,
 )
+
+st.divider()
+
+render_llm_explanation_card()
+
 
 st.divider()
 
