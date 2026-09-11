@@ -162,6 +162,23 @@ class RecommendationResponse(BaseModel):
     timings: TimingResponse
 
 
+class AgenticRecommendationResponse(BaseModel):
+    """Response cho agentic recommendation endpoint."""
+
+    query: str
+    top_k: int
+
+    intent: str | None = None
+    expanded_query: str | None = None
+    confidence_level: str | None = None
+    execution_path: list[str] = []
+    
+    recommendations: list[MovieRecommendation]
+    direct_response: str | None = None
+
+    timings: dict[str, float]
+
+
 class ErrorResponse(BaseModel):
     """Schema chung cho response lỗi."""
 

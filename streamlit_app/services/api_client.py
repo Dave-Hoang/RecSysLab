@@ -47,5 +47,28 @@ class APIClient:
 
         return response.json()
 
+    def agentic_recommend(
+        self,
+        query: str,
+        top_k: int = DEFAULT_TOP_K,
+        include_explanation: bool = True,
+    ) -> dict[str, Any]:
+
+        payload = {
+            "query": query,
+            "top_k": top_k,
+            "include_explanation": include_explanation,
+        }
+
+        response = requests.post(
+            f"{self.base_url}/recommendations/agentic",
+            json=payload,
+            timeout=REQUEST_TIMEOUT * 3,  # Agentic mode có thể retry, cần timeout cao hơn
+        )
+
+        response.raise_for_status()
+
+        return response.json()
+
 
 api_client = APIClient()

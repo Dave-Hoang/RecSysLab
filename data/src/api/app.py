@@ -10,6 +10,9 @@ from src.api.routes.health import router as health_router
 from src.api.routes.recommendations import (
     router as recommendations_router,
 )
+from src.api.routes.agentic import (
+    router as agentic_router,
+)
 from src.production_config import (
     load_production_settings,
 )
@@ -100,6 +103,10 @@ app.include_router(
 
 app.include_router(
     recommendations_router,
+)
+
+app.include_router(
+    agentic_router,
 )
 
 @app.get(

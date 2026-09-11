@@ -213,3 +213,12 @@ CONFIGS_DIR = PROJECT_ROOT / "configs"
 PRODUCTION_CONFIG_PATH = (
     CONFIGS_DIR / "production.yaml"
 )
+# ============================================================
+# GROQ MODEL CONFIG
+# ============================================================
+
+# Groq Model Config
+GROQ_API_KEY_ENV_NAME = "GROQ_API_KEY"
+GROQ_ROUTER_MODEL = "openai/gpt-oss-20b"
+GROQ_EXPANSION_MODEL = "openai/gpt-oss-120b"
+USE_GROQ_FOR_ROUTER = True  # Flag bật/tắt linh hoạt

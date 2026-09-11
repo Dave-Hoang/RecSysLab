@@ -30,8 +30,14 @@ with st.form("recommend_form"):
         placeholder="psychological sci-fi movies",
     )
 
+    pipeline_mode = st.radio(
+        "Pipeline Mode",
+        ["Classic (Rule-based)", "🤖 Agentic Mode (LangGraph)"],
+        horizontal=True,
+    )
+
     mode = st.radio(
-        "Recommendation Mode",
+        "Ranking Mode (Classic Only)",
         ["quality", "fast"],
         horizontal=True,
     )
@@ -65,36 +71,67 @@ if submitted:
         try:
             clear_animation_state()
 
+            is_agentic = "Agentic" in pipeline_mode
+
             with st.spinner("Generating recommendations..."):
-                response = api_client.recommend(
-                    query=query,
-                    mode=mode,
-                    top_k=top_k,
-                    include_explanation=include_explanation,
-                )
+                if is_agentic:
+                    response = api_client.agentic_recommend(
+                        query=query,
+                        top_k=top_k,
+                        include_explanation=include_explanation,
+                    )
+                else:
+                    response = api_client.recommend(
+                        query=query,
+                        mode=mode,
+                        top_k=top_k,
+                        include_explanation=include_explanation,
+                    )
+
+            if is_agentic:
+                st.subheader("🤖 Agentic Trace")
+                st.write(f"**Intent:** `{response.get('intent', 'N/A')}`")
+                
+                expanded_query = response.get("expanded_query")
+                if expanded_query and expanded_query != query:
+                    st.write(f"**Expanded Query:** {expanded_query}")
+                
+                confidence = response.get("confidence_level")
+                if confidence:
+                    st.write(f"**Confidence Level:** `{confidence}`")
+                
+                execution_path = response.get("execution_path", [])
+                if execution_path:
+                    path_str = " → ".join(execution_path)
+                    st.write(f"**Execution Path:** {path_str}")
+
+                direct_response = response.get("direct_response")
+                if direct_response:
+                    st.info(f"💬 {direct_response}")
 
             recommendations = response.get(
                 "recommendations",
                 [],
             )
 
-            st.subheader("Recommended Movies")
+            if not response.get("direct_response"):
+                st.subheader("Recommended Movies")
 
-            if not recommendations:
+                if not recommendations:
 
-                st.info("No recommendations found.")
+                    st.info("No recommendations found.")
 
-            else:
+                else:
 
-                for idx, movie in enumerate(
-                    recommendations,
-                    start=1,
-                ):
+                    for idx, movie in enumerate(
+                        recommendations,
+                        start=1,
+                    ):
 
-                    render_movie_card(
-                        movie,
-                        idx,
-                    )
+                        render_movie_card(
+                            movie,
+                            idx,
+                        )
 
             timings = response.get("timings")
 

@@ -517,3 +517,101 @@ def rank_movies(
     )
 
     return ranked_frame.head(top_n).reset_index(drop=True)
+
+
+# ============================================================
+# LANGGRAPH HELPER FUNCTIONS
+# ============================================================
+
+# Weights cho Fast Path (3 factors, không có Cross-Encoder).
+# Redistribute từ 4-factor weights gốc (CE=0.50, Sem=0.25, Pop=0.15, Rule=0.10),
+# loại bỏ CE weight và normalize lại tổng = 1.0.
+WEIGHT_SEMANTIC_NO_CE = 0.50
+WEIGHT_POPULARITY_NO_CE = 0.30
+WEIGHT_RULE_NO_CE = 0.20
+
+
+def rank_without_ce(
+    candidates_df: pd.DataFrame,
+    query: str,
+) -> pd.DataFrame:
+    """
+    Fast Path: Semantic + Popularity + Rule scoring only (NO Cross-Encoder).
+
+    Dùng cho LangGraph Node 2 (Fast FAISS Retrieval) khi query đủ rõ ràng
+    và không cần Cross-Encoder reranking nặng.
+
+    Args:
+        candidates_df:
+            DataFrame từ FAISS retrieval (phải có các cột trong
+            REQUIRED_CANDIDATE_COLUMNS).
+        query:
+            User query string.
+
+    Returns:
+        DataFrame đã xếp hạng với final_score (KHÔNG có cột
+        cross_encoder_score), sắp xếp theo final_score giảm dần.
+    """
+    if candidates_df.empty:
+        return candidates_df.copy()
+
+    _validate_candidate_columns(
+        candidates_df,
+        REQUIRED_CANDIDATE_COLUMNS,
+    )
+
+    result = compute_semantic_similarity(candidates_df)
+    result = compute_popularity_score(result)
+    result = compute_rule_score(result, query=query)
+
+    # Tính final_score với 3 factors (redistribute weights)
+    result["final_score"] = (
+        result["semantic_similarity"] * WEIGHT_SEMANTIC_NO_CE
+        + result["popularity_score"] * WEIGHT_POPULARITY_NO_CE
+        + result["rule_score"] * WEIGHT_RULE_NO_CE
+    ).round(6)
+
+    result = (
+        result
+        .sort_values(
+            by="final_score",
+            ascending=False,
+            kind="stable",
+        )
+        .reset_index(drop=True)
+    )
+
+    result["final_rank"] = (
+        np.arange(len(result)) + 1
+    )
+
+    return result
+
+
+def rank_with_ce(
+    candidates_df: pd.DataFrame,
+    query: str,
+    cross_encoder: CrossEncoder | None = None,
+) -> pd.DataFrame:
+    """
+    Quality Path: Full 4-factor scoring (Semantic + Popularity + Rule + Cross-Encoder).
+
+    Wrapper quanh rerank_candidates() hiện có, dùng cho LangGraph Node 5
+    (Full Hybrid + CE Reranking) khi query cần chất lượng cao nhất.
+
+    Args:
+        candidates_df:
+            DataFrame từ FAISS retrieval.
+        query:
+            User query string (expanded query nếu đã qua Node 3).
+        cross_encoder:
+            Cross-Encoder model instance.
+
+    Returns:
+        DataFrame đã xếp hạng đầy đủ bao gồm cross_encoder_score.
+    """
+    return rerank_candidates(
+        candidates=candidates_df,
+        query=query,
+        cross_encoder=cross_encoder,
+    )
