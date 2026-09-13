@@ -47,7 +47,7 @@ def load_cross_encoder(
     model = CrossEncoder(
         model_name_or_path=model_name,
         device=selected_device,
-        activation_fn=torch.nn.Sigmoid(),
+        activation_fn=torch.nn.Identity(),
     )
 
     print("[✓] Load Cross-Encoder thành công.")

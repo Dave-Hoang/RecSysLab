@@ -111,6 +111,11 @@ def validate_raw_data_paths() -> None:
 
 CROSS_ENCODER_MODEL_NAME = "BAAI/bge-reranker-v2-m3"
 
+# Ngưỡng logit thô (dựa trên p75 của nhóm irrelevant test set)
+CROSS_ENCODER_RAW_LOGIT_FLOOR = -7.7343
+# Điểm số tối đa khi fallback vì không có ứng viên nào vượt qua ngưỡng logit thô
+CROSS_ENCODER_FALLBACK_MAX_SCORE = 0.3
+
 RULE_SCORE_STEP = 0.10
 RULE_SCORE_MIN = -0.30
 RULE_SCORE_MAX = 0.30

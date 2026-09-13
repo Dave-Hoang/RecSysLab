@@ -5,6 +5,9 @@ import pandas as pd
 from langchain_community.vectorstores import FAISS
 from sentence_transformers import CrossEncoder
 
+import logging
+logger = logging.getLogger(__name__)
+
 from src.config import (
     FINAL_RECOMMENDATION_TOP_K,
     RETRIEVAL_TOP_K,
@@ -15,6 +18,8 @@ from src.config import (
     WEIGHT_POPULARITY,
     WEIGHT_RULE,
     WEIGHT_SEMANTIC,
+    CROSS_ENCODER_RAW_LOGIT_FLOOR,
+    CROSS_ENCODER_FALLBACK_MAX_SCORE,
 )
 from src.ranking.cross_encoder import predict_relevance_scores
 from src.retrieval.retriever import retrieve_movies_with_score
@@ -80,7 +85,7 @@ def _validate_candidate_columns(
 
 def _min_max_normalize(
     values: pd.Series,
-    constant_value: float = 1.0,
+    constant_value: float = 0.5,
 ) -> pd.Series:
     """
     Min-max normalize một Series về khoảng 0–1.
@@ -305,8 +310,32 @@ def compute_cross_encoder_score(
             "số lượng candidates."
         )
 
+    raw_scores_series = pd.Series(scores, index=result.index)
+    
+    if raw_scores_series.empty:
+        normalized = raw_scores_series
+    else:
+        max_logit = float(raw_scores_series.max())
+        
+        if pd.isna(max_logit):
+            normalized = raw_scores_series
+        elif max_logit < CROSS_ENCODER_RAW_LOGIT_FLOOR:
+            logger.warning(
+                f"Cross-encoder fallback triggered: max raw logit = {max_logit:.4f} "
+                f"(< {CROSS_ENCODER_RAW_LOGIT_FLOOR}). Batch considered low-confidence."
+            )
+            ranks = raw_scores_series.rank(method='average')
+            if len(ranks) > 1:
+                rank_normalized = (ranks - 1) / (len(ranks) - 1)
+            else:
+                rank_normalized = pd.Series(1.0, index=ranks.index)
+                
+            normalized = rank_normalized * CROSS_ENCODER_FALLBACK_MAX_SCORE
+        else:
+            normalized = _min_max_normalize(raw_scores_series)
+
     result["cross_encoder_score"] = (
-        pd.Series(scores, index=result.index)
+        normalized.clip(0.0, 1.0)
         .astype("float64")
         .round(6)
     )
