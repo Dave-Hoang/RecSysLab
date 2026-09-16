@@ -55,41 +55,35 @@ The production Agentic pipeline (Quality Path) was evaluated head-to-head agains
 
 The recommendation engine leverages a 7-node LangGraph state machine. *Note: LangGraph is used exclusively for pipeline orchestration, decision-making, and routing, not as a weight-tuning tool.*
 
-```text
-User Query
-  │
-  ▼
-┌─────────────────────┐
-│  Node 1: Analyzer   │  Groq LLM / Gemini fallback
-│  (Intent Router)    │  → search_movie / need_expansion / not_recommendation
-└────┬───────┬────────┘
-     │       │        └──────────────────┐
-     ▼       ▼                           ▼
-┌─────────┐ ┌──────────┐          ┌────────────┐
-│ Node 2  │ │ Node 3   │          │  Node 4    │
-│ Fast    │ │ Expansion│          │  Direct    │
-│ FAISS   │ │ (LLM     │          │  Response  │──→ END
-│ Only    │ │  Rewrite)│          └────────────┘
-└────┬────┘ └────┬─────┘
-     │           ▼
-     │     ┌──────────┐
-     │     │ Node 5   │  FAISS + 4-Factor + Cross-Encoder
-     │     │ Full     │  (expanded query → FAISS, original → CE)
-     │     │ Reranking│
-     │     └────┬─────┘
-     │          │
-     ▼          ▼
-┌─────────────────────┐
-│  Node 6: Quality    │  Threshold: CE ≥ 0.15 or Relative Semantic Score ≥ 0.70
-│  Gate               │  Max retries: 1
-└────┬──────────┬─────┘
-     │          │
-     │ high     │ low (retry)
-     ▼          └──→ Node 3 (loop)
-┌──────────┐
-│ Node 7   │  Gemini 3.5 Flash Lite
-│ Explain  │──→ END
-└──────────┘
+```mermaid
+flowchart TD
+    UserQuery["User Query"]
+
+    Node1["Node 1: Analyzer<br>Intent Router<br>Groq LLM / Gemini fallback"]
+    
+    Node2["Node 2: Fast Retrieval<br>FAISS only"]
+    Node3["Node 3: Expansion<br>LLM rewrite"]
+    Node4["Node 4: Direct Response<br>END"]
+    
+    Node5["Node 5: Full Reranking<br>FAISS + 4-Factor + Cross-Encoder<br>(expanded query → FAISS, original → CE)"]
+    
+    Node6["Node 6: Quality Gate<br>CE ≥ 0.15 or Relative Semantic Score ≥ 0.70<br>Max retries: 1"]
+    
+    Node7["Node 7: Explanation<br>Gemini 3.5 Flash Lite<br>END"]
+
+    UserQuery --> Node1
+    
+    Node1 -- "search_movie" --> Node2
+    Node1 -- "need_expansion" --> Node3
+    Node1 -- "not_recommendation" --> Node4
+    
+    Node3 --> Node5
+    
+    Node2 --> Node6
+    Node5 --> Node6
+    
+    Node6 -- "low / retry" --> Node3
+    Node6 -- "high" --> Node7
 ```
 
 ---
