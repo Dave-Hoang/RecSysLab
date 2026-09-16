@@ -1,0 +1,121 @@
+﻿query_id,query,category,difficulty,configuration,precision_at_5,ndcg_at_5,mrr_at_5,mrr_strong_at_5,hit_rate_at_5,irrelevant_at_5,mean_relevance_at_5
+Q001,dark supernatural horror movies,genre,easy,cross_encoder_only,0.8,0.6608397947263838,0.5,0.5,1.0,1,1.6
+Q001,dark supernatural horror movies,genre,easy,faiss_only,0.8,0.8687949224876581,1.0,1.0,1.0,1,1.6
+Q001,dark supernatural horror movies,genre,easy,hybrid_no_ce,0.8,0.8687949224876581,1.0,1.0,1.0,1,1.6
+Q001,dark supernatural horror movies,genre,easy,hybrid_with_ce,0.8,0.6608397947263838,0.5,0.5,1.0,1,1.6
+Q002,romantic comedy movies,genre,easy,cross_encoder_only,1.0,1.0,1.0,1.0,1.0,0,2.0
+Q002,romantic comedy movies,genre,easy,faiss_only,1.0,0.8573424901769816,1.0,1.0,1.0,0,1.8
+Q002,romantic comedy movies,genre,easy,hybrid_no_ce,1.0,0.8573424901769816,1.0,1.0,1.0,0,1.8
+Q002,romantic comedy movies,genre,easy,hybrid_with_ce,1.0,1.0,1.0,1.0,1.0,0,2.0
+Q003,psychological thriller movies,genre,easy,cross_encoder_only,1.0,1.0,1.0,1.0,1.0,0,2.0
+Q003,psychological thriller movies,genre,easy,faiss_only,1.0,1.0,1.0,1.0,1.0,0,2.0
+Q003,psychological thriller movies,genre,easy,hybrid_no_ce,1.0,1.0,1.0,1.0,1.0,0,2.0
+Q003,psychological thriller movies,genre,easy,hybrid_with_ce,1.0,1.0,1.0,1.0,1.0,0,2.0
+Q004,animated family movies,genre,easy,cross_encoder_only,1.0,0.8573424901769816,1.0,1.0,1.0,0,1.8
+Q004,animated family movies,genre,easy,faiss_only,1.0,0.8869465982421278,1.0,1.0,1.0,0,1.8
+Q004,animated family movies,genre,easy,hybrid_no_ce,1.0,0.7994765465672333,1.0,1.0,1.0,0,1.6
+Q004,animated family movies,genre,easy,hybrid_with_ce,1.0,0.8573424901769816,1.0,1.0,1.0,0,1.8
+Q005,science fiction space movies,genre,easy,cross_encoder_only,1.0,0.9026211001048622,1.0,1.0,1.0,0,1.8
+Q005,science fiction space movies,genre,easy,faiss_only,1.0,0.8869465982421278,1.0,1.0,1.0,0,1.8
+Q005,science fiction space movies,genre,easy,hybrid_no_ce,1.0,0.9026211001048622,1.0,1.0,1.0,0,1.8
+Q005,science fiction space movies,genre,easy,hybrid_with_ce,1.0,1.0,1.0,1.0,1.0,0,2.0
+Q006,historical war drama,genre,easy,cross_encoder_only,1.0,0.7895676983469901,1.0,1.0,1.0,0,1.6
+Q006,historical war drama,genre,easy,faiss_only,1.0,0.6312356866612375,1.0,0.3333333333333333,1.0,0,1.6
+Q006,historical war drama,genre,easy,hybrid_no_ce,1.0,0.7020976466720956,1.0,1.0,1.0,0,1.4
+Q006,historical war drama,genre,easy,hybrid_with_ce,1.0,0.8869465982421278,1.0,1.0,1.0,0,1.8
+Q007,sad movie about father and son,emotion_theme,medium,cross_encoder_only,1.0,0.9125299483251055,1.0,1.0,1.0,0,1.8
+Q007,sad movie about father and son,emotion_theme,medium,faiss_only,0.6,0.6399453854227659,1.0,1.0,1.0,2,1.2
+Q007,sad movie about father and son,emotion_theme,medium,hybrid_no_ce,0.8,0.8304198973631919,1.0,1.0,1.0,1,1.6
+Q007,sad movie about father and son,emotion_theme,medium,hybrid_with_ce,1.0,1.0,1.0,1.0,1.0,0,2.0
+Q008,emotional movie about friendship,emotion_theme,medium,cross_encoder_only,0.8,0.8687949224876581,1.0,1.0,1.0,1,1.6
+Q008,emotional movie about friendship,emotion_theme,medium,faiss_only,1.0,0.9026211001048622,1.0,1.0,1.0,0,1.8
+Q008,emotional movie about friendship,emotion_theme,medium,hybrid_no_ce,1.0,0.9026211001048622,1.0,1.0,1.0,0,1.8
+Q008,emotional movie about friendship,emotion_theme,medium,hybrid_with_ce,1.0,1.0,1.0,1.0,1.0,0,2.0
+Q009,movie about grief and loss,emotion_theme,medium,cross_encoder_only,1.0,1.0,1.0,1.0,1.0,0,2.0
+Q009,movie about grief and loss,emotion_theme,medium,faiss_only,1.0,0.543765634986343,1.0,0.3333333333333333,1.0,0,1.4
+Q009,movie about grief and loss,emotion_theme,medium,hybrid_no_ce,1.0,0.5890442449142237,1.0,0.5,1.0,0,1.4
+Q009,movie about grief and loss,emotion_theme,medium,hybrid_with_ce,1.0,0.9026211001048622,1.0,1.0,1.0,0,1.8
+Q010,inspirational sports movie,emotion_theme,medium,cross_encoder_only,1.0,0.8869465982421278,1.0,1.0,1.0,0,1.8
+Q010,inspirational sports movie,emotion_theme,medium,faiss_only,1.0,0.8869465982421278,1.0,1.0,1.0,0,1.8
+Q010,inspirational sports movie,emotion_theme,medium,hybrid_no_ce,1.0,1.0,1.0,1.0,1.0,0,2.0
+Q010,inspirational sports movie,emotion_theme,medium,hybrid_with_ce,1.0,0.8151510484299677,1.0,1.0,1.0,0,1.6
+Q011,coming-of-age story,emotion_theme,easy,cross_encoder_only,1.0,0.7599635902818439,1.0,1.0,1.0,0,1.6
+Q011,coming-of-age story,emotion_theme,easy,faiss_only,1.0,0.7698724385020871,1.0,1.0,1.0,0,1.6
+Q011,coming-of-age story,emotion_theme,easy,hybrid_no_ce,1.0,0.8869465982421278,1.0,1.0,1.0,0,1.8
+Q011,coming-of-age story,emotion_theme,easy,hybrid_with_ce,1.0,0.7895676983469901,1.0,1.0,1.0,0,1.6
+Q012,movie about loneliness and isolation,emotion_theme,medium,cross_encoder_only,1.0,0.7895676983469901,1.0,1.0,1.0,0,1.6
+Q012,movie about loneliness and isolation,emotion_theme,medium,faiss_only,1.0,0.9026211001048622,1.0,1.0,1.0,0,1.8
+Q012,movie about loneliness and isolation,emotion_theme,medium,hybrid_no_ce,1.0,0.9026211001048622,1.0,1.0,1.0,0,1.8
+Q012,movie about loneliness and isolation,emotion_theme,medium,hybrid_with_ce,1.0,0.9125299483251055,1.0,1.0,1.0,0,1.8
+Q013,psychological sci-fi movies,multi_condition,medium,cross_encoder_only,1.0,0.7738931964842558,1.0,0.5,1.0,0,1.8
+Q013,psychological sci-fi movies,multi_condition,medium,faiss_only,0.8,0.39769728514363656,1.0,0.3333333333333333,1.0,1,1.0
+Q013,psychological sci-fi movies,multi_condition,medium,hybrid_no_ce,0.8,0.4851673368185311,1.0,0.3333333333333333,1.0,1,1.2
+Q013,psychological sci-fi movies,multi_condition,medium,hybrid_with_ce,1.0,0.7738931964842558,1.0,0.5,1.0,0,1.8
+Q014,romantic comedy with a fake relationship,multi_condition,medium,cross_encoder_only,0.6,0.6469527254158582,1.0,1.0,1.0,2,0.8
+Q014,romantic comedy with a fake relationship,multi_condition,medium,faiss_only,0.4,0.3741298890932975,0.5,0.5,1.0,3,0.6
+Q014,romantic comedy with a fake relationship,multi_condition,medium,hybrid_no_ce,0.6,0.4054192244269168,0.5,0.3333333333333333,1.0,2,0.8
+Q014,romantic comedy with a fake relationship,multi_condition,medium,hybrid_with_ce,0.6,0.3578181518798765,0.5,0.2,1.0,2,0.8
+Q015,time travel movie with an emotional story,multi_condition,hard,cross_encoder_only,1.0,0.989141344633751,1.0,1.0,1.0,0,1.8
+Q015,time travel movie with an emotional story,multi_condition,hard,faiss_only,0.8,0.7536874694386968,1.0,1.0,1.0,1,1.4
+Q015,time travel movie with an emotional story,multi_condition,hard,hybrid_no_ce,0.8,0.6555628554157611,1.0,1.0,1.0,1,1.2
+Q015,time travel movie with an emotional story,multi_condition,hard,hybrid_with_ce,1.0,0.9719643720954755,1.0,1.0,1.0,0,1.8
+Q016,crime thriller with a female detective,multi_condition,hard,cross_encoder_only,0.8,0.8015792876461758,1.0,1.0,1.0,1,1.2
+Q016,crime thriller with a female detective,multi_condition,hard,faiss_only,0.6,0.5621593015028927,1.0,0.5,1.0,2,1.0
+Q016,crime thriller with a female detective,multi_condition,hard,hybrid_no_ce,0.6,0.5259170739743184,1.0,0.3333333333333333,1.0,2,1.0
+Q016,crime thriller with a female detective,multi_condition,hard,hybrid_with_ce,0.8,0.8908010534528861,1.0,1.0,1.0,1,1.4
+Q017,space movie with philosophical themes,multi_condition,hard,cross_encoder_only,0.8,0.6283297815089526,0.5,0.5,1.0,1,1.4
+Q017,space movie with philosophical themes,multi_condition,hard,faiss_only,1.0,0.7413611989730529,1.0,0.5,1.0,0,1.6
+Q017,space movie with philosophical themes,multi_condition,hard,hybrid_no_ce,1.0,0.865251271803402,1.0,1.0,1.0,0,1.6
+Q017,space movie with philosophical themes,multi_condition,hard,hybrid_with_ce,0.8,0.8453596772450139,1.0,1.0,1.0,1,1.4
+Q018,mystery movie with a major plot twist,multi_condition,medium,cross_encoder_only,1.0,0.6864231448093613,1.0,0.5,1.0,0,1.6
+Q018,mystery movie with a major plot twist,multi_condition,medium,faiss_only,1.0,0.7698724385020871,1.0,1.0,1.0,0,1.6
+Q018,mystery movie with a major plot twist,multi_condition,medium,hybrid_no_ce,1.0,0.8151510484299677,1.0,1.0,1.0,0,1.6
+Q018,mystery movie with a major plot twist,multi_condition,medium,hybrid_with_ce,1.0,0.8573424901769816,1.0,1.0,1.0,0,1.8
+Q019,movies like Interstellar,similar_movie,medium,cross_encoder_only,0.8,0.7713398810938545,1.0,1.0,1.0,1,1.2
+Q019,movies like Interstellar,similar_movie,medium,faiss_only,1.0,0.8613098738256916,1.0,1.0,1.0,0,1.4
+Q019,movies like Interstellar,similar_movie,medium,hybrid_no_ce,1.0,0.8249925457400985,1.0,1.0,1.0,0,1.4
+Q019,movies like Interstellar,similar_movie,medium,hybrid_with_ce,1.0,0.7936077488582781,1.0,1.0,1.0,0,1.4
+Q020,movies similar to Toy Story,similar_movie,medium,cross_encoder_only,1.0,1.0,1.0,1.0,1.0,0,2.0
+Q020,movies similar to Toy Story,similar_movie,medium,faiss_only,1.0,1.0,1.0,1.0,1.0,0,2.0
+Q020,movies similar to Toy Story,similar_movie,medium,hybrid_no_ce,0.8,0.8687949224876581,1.0,1.0,1.0,1,1.6
+Q020,movies similar to Toy Story,similar_movie,medium,hybrid_with_ce,1.0,1.0,1.0,1.0,1.0,0,2.0
+Q021,movies like The Godfather,similar_movie,medium,cross_encoder_only,1.0,0.8932868997079263,1.0,1.0,1.0,0,1.6
+Q021,movies like The Godfather,similar_movie,medium,faiss_only,0.8,0.8399303495618896,1.0,1.0,1.0,1,1.4
+Q021,movies like The Godfather,similar_movie,medium,hybrid_no_ce,0.8,0.9520727775370875,1.0,1.0,1.0,1,1.6
+Q021,movies like The Godfather,similar_movie,medium,hybrid_with_ce,1.0,1.0,1.0,1.0,1.0,0,1.8
+Q022,movies similar to Shutter Island,similar_movie,medium,cross_encoder_only,0.6,0.5633046918323918,1.0,1.0,1.0,2,0.8
+Q022,movies similar to Shutter Island,similar_movie,medium,faiss_only,0.6,0.6645320995916081,1.0,1.0,1.0,2,1.0
+Q022,movies similar to Shutter Island,similar_movie,medium,hybrid_no_ce,0.6,0.6838361539639037,1.0,1.0,1.0,2,1.0
+Q022,movies similar to Shutter Island,similar_movie,medium,hybrid_with_ce,0.6,0.8032973263229353,1.0,1.0,1.0,2,1.2
+Q023,horror movie without ghosts,negative_constraint,hard,cross_encoder_only,0.6,0.23642122833884657,0.3333333333333333,0.2,1.0,2,0.8
+Q023,horror movie without ghosts,negative_constraint,hard,faiss_only,0.8,0.8687949224876581,1.0,1.0,1.0,1,1.6
+Q023,horror movie without ghosts,negative_constraint,hard,hybrid_no_ce,1.0,1.0,1.0,1.0,1.0,0,2.0
+Q023,horror movie without ghosts,negative_constraint,hard,hybrid_with_ce,0.8,0.6886348353703347,1.0,1.0,1.0,1,1.4
+Q024,family animation that is not adult comedy,negative_constraint,hard,cross_encoder_only,0.8,0.6886348353703347,1.0,1.0,1.0,1,1.4
+Q024,family animation that is not adult comedy,negative_constraint,hard,faiss_only,1.0,0.8869465982421278,1.0,1.0,1.0,0,1.8
+Q024,family animation that is not adult comedy,negative_constraint,hard,hybrid_no_ce,1.0,0.8869465982421278,1.0,1.0,1.0,0,1.8
+Q024,family animation that is not adult comedy,negative_constraint,hard,hybrid_with_ce,1.0,0.9125299483251055,1.0,1.0,1.0,0,1.8
+Q025,sad drama that is not a romance,negative_constraint,hard,cross_encoder_only,0.6,0.5147714448836773,0.5,0.5,1.0,2,1.2
+Q025,sad drama that is not a romance,negative_constraint,hard,faiss_only,0.8,0.6608397947263838,0.5,0.5,1.0,1,1.6
+Q025,sad drama that is not a romance,negative_constraint,hard,hybrid_no_ce,0.8,0.8687949224876581,1.0,1.0,1.0,1,1.6
+Q025,sad drama that is not a romance,negative_constraint,hard,hybrid_with_ce,1.0,1.0,1.0,1.0,1.0,0,2.0
+Q026,superhero movie without comedy,negative_constraint,hard,cross_encoder_only,0.6,0.3552695025709292,0.5,0.3333333333333333,1.0,2,0.8
+Q026,superhero movie without comedy,negative_constraint,hard,faiss_only,0.4,0.29553891639141344,0.5,0.3333333333333333,1.0,3,0.6
+Q026,superhero movie without comedy,negative_constraint,hard,hybrid_no_ce,0.6,0.5259170739743184,1.0,0.3333333333333333,1.0,2,1.0
+Q026,superhero movie without comedy,negative_constraint,hard,hybrid_with_ce,0.6,0.4747306749299608,0.5,0.3333333333333333,1.0,2,1.0
+Q027,I want a movie that makes me think deeply,natural_language,hard,cross_encoder_only,1.0,0.9125299483251055,1.0,1.0,1.0,0,1.8
+Q027,I want a movie that makes me think deeply,natural_language,hard,faiss_only,1.0,0.7994765465672333,1.0,1.0,1.0,0,1.6
+Q027,I want a movie that makes me think deeply,natural_language,hard,hybrid_no_ce,1.0,0.7895676983469901,1.0,1.0,1.0,0,1.6
+Q027,I want a movie that makes me think deeply,natural_language,hard,hybrid_with_ce,1.0,0.7020976466720956,1.0,1.0,1.0,0,1.4
+Q028,I need something light to watch after work,natural_language,hard,cross_encoder_only,0.6,0.6540952403163659,1.0,1.0,1.0,2,1.0
+Q028,I need something light to watch after work,natural_language,hard,faiss_only,0.8,0.8118947216573652,1.0,1.0,1.0,1,1.4
+Q028,I need something light to watch after work,natural_language,hard,hybrid_no_ce,0.8,0.7794529282461102,1.0,1.0,1.0,1,1.4
+Q028,I need something light to watch after work,natural_language,hard,hybrid_with_ce,0.8,0.8118947216573652,1.0,1.0,1.0,1,1.4
+Q029,Recommend a movie I can watch with my family this weekend,natural_language,hard,cross_encoder_only,0.8,0.5069341939523101,1.0,0.5,1.0,1,1.2
+Q029,Recommend a movie I can watch with my family this weekend,natural_language,hard,faiss_only,1.0,0.7738931964842558,1.0,0.5,1.0,0,1.8
+Q029,Recommend a movie I can watch with my family this weekend,natural_language,hard,hybrid_no_ce,1.0,0.8869465982421278,1.0,1.0,1.0,0,1.8
+Q029,Recommend a movie I can watch with my family this weekend,natural_language,hard,hybrid_with_ce,1.0,0.9026211001048622,1.0,1.0,1.0,0,1.8
+Q030,I want an emotional movie that will stay with me for days,natural_language,hard,cross_encoder_only,1.0,1.0,1.0,1.0,1.0,0,2.0
+Q030,I want an emotional movie that will stay with me for days,natural_language,hard,faiss_only,0.6,0.14895117666395208,0.3333333333333333,0.0,1.0,2,0.6
+Q030,I want an emotional movie that will stay with me for days,natural_language,hard,hybrid_no_ce,0.6,0.16375323069652525,0.5,0.0,1.0,2,0.6
+Q030,I want an emotional movie that will stay with me for days,natural_language,hard,hybrid_with_ce,0.6,0.24090885754831726,1.0,0.0,1.0,2,0.6

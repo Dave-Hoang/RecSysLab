@@ -1,0 +1,28 @@
+{
+  "benchmark": "Agentic Movie Recommendation Benchmark v1",
+  "timestamp": "2026-09-16T10:00:00+07:00",
+  "query_count": 30,
+  "top_k_cutoff": 5,
+  "models": {
+    "embedding": "BAAI/bge-m3",
+    "cross_encoder": "BAAI/bge-reranker-v2-m3",
+    "llm_router": "openai/gpt-oss-20b",
+    "llm_expansion": "openai/gpt-oss-120b",
+    "llm_explanation": "gemini-3.5-flash-lite"
+  },
+  "configs": {
+    "agentic": {
+      "weights": {"cross_encoder": 0.55, "semantic": 0.25, "popularity": 0.10, "rule": 0.10}
+    },
+    "classic_hybrid_with_ce": {
+      "weights": {"cross_encoder": 0.50, "semantic": 0.25, "popularity": 0.15, "rule": 0.10}
+    }
+  },
+  "labels": {
+    "version": "v2",
+    "source": "merge_manifest.json",
+    "scale": [0, 1, 2],
+    "coverage": 1.0
+  },
+  "metrics_command": "Recomputed strictly from predictions vs labels_v2 with strict_mode=True"
+}

@@ -47,11 +47,14 @@ def _build_prediction_rows(
                 "movieId": int(movie["movieId"]),
                 "title": movie["title"],
                 "genres": movie["genres"],
-                "faiss_distance": movie.get(
-                    "faiss_distance"
+                "faiss_squared_l2_distance": movie.get(
+                    "faiss_squared_l2_distance"
                 ),
-                "semantic_similarity": movie.get(
-                    "semantic_similarity"
+                "cosine_similarity_raw": movie.get(
+                    "cosine_similarity_raw"
+                ),
+                "semantic_score_relative": movie.get(
+                    "semantic_score_relative"
                 ),
                 "popularity_score": movie.get(
                     "popularity_score"

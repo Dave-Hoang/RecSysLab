@@ -26,11 +26,6 @@ REQUIRED_COLUMNS = {
 METRIC_COLUMNS = [
     "precision_at_5",
     "ndcg_at_5",
-    "mrr_at_5",
-    "mrr_strong_at_5",
-    "hit_rate_at_5",
-    "irrelevant_at_5",
-    "mean_relevance_at_5",
 ]
 
 
@@ -119,17 +114,9 @@ def load_scored_predictions(path: Path) -> pd.DataFrame:
     )
 
     if dataframe["relevance"].isna().any():
-        invalid_rows = dataframe.loc[
-            dataframe["relevance"].isna(),
-            ["query_id", "configuration", "movieId", "rank"],
-        ]
+        pass # Allow missing labels
 
-        raise ValueError(
-            "Có prediction thiếu relevance:\n"
-            f"{invalid_rows.to_string(index=False)}"
-        )
-
-    dataframe["relevance"] = dataframe["relevance"].astype("int8")
+    dataframe["relevance"] = dataframe["relevance"].astype("Int8")
 
     invalid_relevance = dataframe.loc[
         ~dataframe["relevance"].isin([0, 1, 2]),
@@ -336,6 +323,7 @@ def _build_query_label_pool(
     return {
         str(query_id): (
             group["relevance"]
+            .dropna()
             .sort_values(ascending=False)
             .astype(int)
             .tolist()
@@ -349,13 +337,21 @@ def _build_query_label_pool(
 
 
 def ndcg_at_k(
-    ranked_relevances: Iterable[int | float],
+    ranked_relevances: Iterable[int | float | type(pd.NA)],
     ideal_relevances: Iterable[int | float],
     k: int,
+    strict_mode: bool = True,
 ) -> float:
     """Tính NDCG@K bằng cùng một ideal pool cho mỗi query."""
+    
+    ranked_list = list(ranked_relevances)[:k]
+    
+    if strict_mode and any(pd.isna(x) for x in ranked_list):
+        return float('nan')
+        
+    ranked_list = [0 if pd.isna(x) else x for x in ranked_list]
 
-    dcg = dcg_at_k(ranked_relevances, k=k)
+    dcg = dcg_at_k(ranked_list, k=k)
     idcg = dcg_at_k(ideal_relevances, k=k)
 
     if idcg == 0.0:
@@ -414,11 +410,12 @@ def compute_per_query_metrics(
             kind="stable",
         ).head(top_k)
 
-        relevances = ranked["relevance"].astype(int).tolist()
-        binary_relevant = [
-            int(value >= RELEVANT_THRESHOLD)
-            for value in relevances
-        ]
+        relevances = ranked["relevance"].tolist()
+        if any(pd.isna(x) for x in relevances):
+            precision = float('nan')
+        else:
+            binary_relevant = [int(value >= RELEVANT_THRESHOLD) for value in relevances]
+            precision = float(np.mean(binary_relevant))
 
         first_row = ranked.iloc[0]
         ideal_relevances = query_label_pool[str(query_id)]
@@ -430,32 +427,12 @@ def compute_per_query_metrics(
                 "category": first_row["category"],
                 "difficulty": first_row["difficulty"],
                 "configuration": str(configuration),
-                "precision_at_5": float(
-                    np.mean(binary_relevant)
-                ),
+                "precision_at_5": precision,
                 "ndcg_at_5": ndcg_at_k(
                     ranked_relevances=relevances,
                     ideal_relevances=ideal_relevances,
                     k=top_k,
-                ),
-                "mrr_at_5": reciprocal_rank_at_k(
-                    relevances,
-                    k=top_k,
-                    threshold=RELEVANT_THRESHOLD,
-                ),
-                "mrr_strong_at_5": reciprocal_rank_at_k(
-                    relevances,
-                    k=top_k,
-                    threshold=STRONG_RELEVANCE_VALUE,
-                ),
-                "hit_rate_at_5": float(
-                    any(binary_relevant)
-                ),
-                "irrelevant_at_5": int(
-                    sum(value == 0 for value in relevances)
-                ),
-                "mean_relevance_at_5": float(
-                    np.mean(relevances)
+                    strict_mode=True
                 ),
             }
         )

@@ -30,6 +30,10 @@ class FakeRecommendationService:
         # Health endpoint chỉ kiểm tra thuộc tính này khác None.
         self.vector_store = object()
 
+    def _dataframe_to_records(self, df):
+        return df.to_dict(orient="records")
+
+
     def recommend(
         self,
         query: str,
@@ -53,7 +57,9 @@ class FakeRecommendationService:
                     "final_rank": rank,
                     "rating_mean": 4.0,
                     "rating_count": 1000,
-                    "semantic_similarity": 0.90,
+                    "faiss_squared_l2_distance": 0.20,
+                    "cosine_similarity_raw": 0.90,
+                    "semantic_score_relative": 0.90,
                     "popularity_score": 0.70,
                     "rule_score": 0.10,
                     "cross_encoder_score": (
@@ -63,20 +69,14 @@ class FakeRecommendationService:
                     ),
                     "evaluation_score": 0.85,
                     "final_score": 0.85,
+                    "explanation": "Test explanation." if include_explanation else None,
                 }
             )
-
-        explanation = (
-            "Test explanation."
-            if include_explanation
-            else ""
-        )
 
         return RecommendationResult(
             query=query,
             configuration=configuration,
             recommendations=recommendations,
-            explanation=explanation,
             timings={
                 "ranking_seconds": 0.01,
                 "generation_seconds": (

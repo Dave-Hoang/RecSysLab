@@ -15,8 +15,9 @@ class EvaluationPrediction:
     movie_id: int
     title: str
     genres: str
-    faiss_distance: float | None
-    semantic_similarity: float | None
+    faiss_squared_l2_distance: float | None
+    cosine_similarity_raw: float | None
+    semantic_score_relative: float | None
     popularity_score: float | None
     rule_score: float | None
     cross_encoder_score: float | None

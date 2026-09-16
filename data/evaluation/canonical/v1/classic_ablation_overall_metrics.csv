@@ -1,0 +1,5 @@
+configuration,ndcg_at_5_mean,precision_at_5_mean,query_count
+cross_encoder_only,0.75148639291896,0.8733333333333333,30
+faiss_only,0.7154685287572546,0.86,30
+hybrid_no_ce,0.7560567834357195,0.88,30
+hybrid_with_ce,0.8087716656553446,0.9133333333333333,30

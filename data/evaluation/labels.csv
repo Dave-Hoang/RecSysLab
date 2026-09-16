@@ -1,0 +1,346 @@
+query_id,query,category,difficulty,movieId,title,genres,relevance,notes
+Q001,dark supernatural horror movies,genre,easy,1748,Dark City (1998),Adventure|Film-Noir|Sci-Fi|Thriller,0,
+Q001,dark supernatural horror movies,genre,easy,3917,Hellraiser (1987),Horror,2,
+Q001,dark supernatural horror movies,genre,easy,80846,Devil (2010),Horror|Mystery|Thriller,2,
+Q001,dark supernatural horror movies,genre,easy,97188,Sinister (2012),Horror|Thriller,2,
+Q001,dark supernatural horror movies,genre,easy,99912,Mama (2013),Horror,2,
+Q001,dark supernatural horror movies,genre,easy,100810,Dark Skies (2013),Horror|Sci-Fi|Thriller,2,
+Q001,dark supernatural horror movies,genre,easy,142598,Last Shift (2014),Horror,2,
+Q001,dark supernatural horror movies,genre,easy,168420,Justice League Dark (2017),Action|Animation|Fantasy|Horror,0,
+Q001,dark supernatural horror movies,genre,easy,226888,The Dark and the Wicked (2020),Horror,2,
+Q002,romantic comedy movies,genre,easy,1307,When Harry Met Sally... (1989),Comedy|Romance,2,
+Q002,romantic comedy movies,genre,easy,2671,Notting Hill (1999),Comedy|Romance,2,
+Q002,romantic comedy movies,genre,easy,4817,Born Romantic (2000),Comedy|Drama|Romance,2,
+Q002,romantic comedy movies,genre,easy,4823,Serendipity (2001),Comedy|Romance,2,
+Q002,romantic comedy movies,genre,easy,4992,Kate & Leopold (2001),Comedy|Romance,2,
+Q002,romantic comedy movies,genre,easy,6155,How to Lose a Guy in 10 Days (2003),Comedy|Romance,2,
+Q002,romantic comedy movies,genre,easy,6942,Love Actually (2003),Comedy|Drama|Romance,2,
+Q002,romantic comedy movies,genre,easy,67087,"I Love You, Man (2009)",Comedy,1,
+Q002,romantic comedy movies,genre,easy,93892,Romantics Anonymous (Les émotifs anonymes) (2010),Comedy|Romance,2,
+Q003,psychological thriller movies,genre,easy,47,Seven (a.k.a. Se7en) (1995),Mystery|Thriller,2,
+Q003,psychological thriller movies,genre,easy,593,"Silence of the Lambs, The (1991)",Crime|Horror|Thriller,2,
+Q003,psychological thriller movies,genre,easy,2181,Marnie (1964),Drama|Mystery|Romance|Thriller,2,
+Q003,psychological thriller movies,genre,easy,74458,Shutter Island (2010),Drama|Mystery|Thriller,2,
+Q003,psychological thriller movies,genre,easy,78349,Exam (2009),Mystery|Thriller,2,
+Q003,psychological thriller movies,genre,easy,81591,Black Swan (2010),Drama|Thriller,2,
+Q003,psychological thriller movies,genre,easy,101088,Stoker (2013),Drama|Mystery|Thriller,2,
+Q003,psychological thriller movies,genre,easy,108729,Enemy (2013),Mystery|Thriller,2,
+Q004,animated family movies,genre,easy,5218,Ice Age (2002),Adventure|Animation|Children|Comedy,2,
+Q004,animated family movies,genre,easy,6377,Finding Nemo (2003),Adventure|Animation|Children|Comedy,2,
+Q004,animated family movies,genre,easy,50872,Ratatouille (2007),Animation|Children|Drama,2,
+Q004,animated family movies,genre,easy,71264,Cloudy with a Chance of Meatballs (2009),Animation|Children|Fantasy|IMAX,1,
+Q004,animated family movies,genre,easy,72226,Fantastic Mr. Fox (2009),Adventure|Animation|Children|Comedy|Crime,1,
+Q004,animated family movies,genre,easy,168418,The Boss Baby (2017),Animation|Children|Comedy,2,
+Q004,animated family movies,genre,easy,177765,Coco (2017),Adventure|Animation|Children,2,
+Q004,animated family movies,genre,easy,189873,Bao (2018),Animation,2,
+Q005,science fiction space movies,genre,easy,924,2001: A Space Odyssey (1968),Adventure|Drama|Sci-Fi,2,
+Q005,science fiction space movies,genre,easy,1301,Forbidden Planet (1956),Drama|Sci-Fi,2,
+Q005,science fiction space movies,genre,easy,4874,K-PAX (2001),Drama|Fantasy|Mystery|Sci-Fi,1,
+Q005,science fiction space movies,genre,easy,34405,Serenity (2005),Action|Adventure|Sci-Fi,2,
+Q005,science fiction space movies,genre,easy,52328,Sunshine (2007),Adventure|Drama|Sci-Fi|Thriller,2,
+Q005,science fiction space movies,genre,easy,104841,Gravity (2013),Action|Sci-Fi|IMAX,2,
+Q005,science fiction space movies,genre,easy,109487,Interstellar (2014),Sci-Fi|IMAX,2,
+Q005,science fiction space movies,genre,easy,204352,Ad Astra (2019),Adventure|Drama|Mystery|Sci-Fi|Thriller,2,
+Q005,science fiction space movies,genre,easy,249122,Oxygen (2021),Drama|Fantasy|Sci-Fi|Thriller,1,
+Q006,historical war drama,genre,easy,1242,Glory (1989),Drama|War,2,
+Q006,historical war drama,genre,easy,4033,Thirteen Days (2000),Drama|Thriller|War,1,
+Q006,historical war drama,genre,easy,4463,1969 (1988),Drama|War,1,
+Q006,historical war drama,genre,easy,5221,Harrison's Flowers (2000),Drama,1,
+Q006,historical war drama,genre,easy,6439,Attack! (1956),Drama|War,2,
+Q006,historical war drama,genre,easy,56788,Charlie Wilson's War (2007),Comedy|Drama|War,1,
+Q006,historical war drama,genre,easy,98154,Lincoln (2012),Drama|War,1,
+Q006,historical war drama,genre,easy,170705,Band of Brothers (2001),Action|Drama|War,2,
+Q006,historical war drama,genre,easy,208703,1917 (2019),Drama|War,2,
+Q006,historical war drama,genre,easy,278578,All Quiet on the Western Front (2022),Action|Drama|War,2,
+Q007,sad movie about father and son,emotion_theme,medium,51167,My Father and My Son (Babam ve oglum) (2005),Drama,2,
+Q007,sad movie about father and son,emotion_theme,medium,180555,Mom and Dad (2017),Horror|Thriller,0,
+Q007,sad movie about father and son,emotion_theme,medium,186305,Kodachrome (2018),Drama,2,
+Q007,sad movie about father and son,emotion_theme,medium,190745,Father of the Year (2018),Comedy,0,
+Q007,sad movie about father and son,emotion_theme,medium,192383,Beautiful Boy (2018),Drama,2,
+Q007,sad movie about father and son,emotion_theme,medium,197885,Honey Boy (2019),Drama,2,
+Q007,sad movie about father and son,emotion_theme,medium,203904,Blinded by the Light (2019),Comedy|Drama,1,
+Q007,sad movie about father and son,emotion_theme,medium,275503,Aftersun (2022),Drama,2,
+Q008,emotional movie about friendship,emotion_theme,medium,68954,Up (2009),Adventure|Animation|Children|Drama,2,
+Q008,emotional movie about friendship,emotion_theme,medium,92259,Intouchables (2011),Comedy|Drama,2,
+Q008,emotional movie about friendship,emotion_theme,medium,109483,That Awkward Moment (2014),Comedy|Romance,0,
+Q008,emotional movie about friendship,emotion_theme,medium,127202,Me and Earl and the Dying Girl (2015),Drama,2,
+Q008,emotional movie about friendship,emotion_theme,medium,161922,The Edge of Seventeen (2016),Comedy,1,
+Q008,emotional movie about friendship,emotion_theme,medium,194448,Green Book (2018),Comedy|Drama,2,
+Q008,emotional movie about friendship,emotion_theme,medium,199237,Paddleton (2019),Drama,2,
+Q008,emotional movie about friendship,emotion_theme,medium,228157,The Friend (2019),Drama,2,
+Q009,movie about grief and loss,emotion_theme,medium,117861,Black or White (2014),Drama,1,
+Q009,movie about grief and loss,emotion_theme,medium,127202,Me and Earl and the Dying Girl (2015),Drama,1,
+Q009,movie about grief and loss,emotion_theme,medium,142222,Demolition (2016),Drama,2,
+Q009,movie about grief and loss,emotion_theme,medium,165549,Manchester by the Sea (2016),Drama,2,
+Q009,movie about grief and loss,emotion_theme,medium,165551,Lion (2016),Drama,1,
+Q009,movie about grief and loss,emotion_theme,medium,165937,Collateral Beauty (2016),Drama,2,
+Q009,movie about grief and loss,emotion_theme,medium,168610,A Ghost Story (2017),Drama,2,
+Q009,movie about grief and loss,emotion_theme,medium,257037,Drive My Car (2021),Drama,2,
+Q010,inspirational sports movie,emotion_theme,medium,524,Rudy (1993),Drama,2,
+Q010,inspirational sports movie,emotion_theme,medium,3882,Bring It On (2000),Comedy,1,
+Q010,inspirational sports movie,emotion_theme,medium,3916,Remember the Titans (2000),Drama,2,
+Q010,inspirational sports movie,emotion_theme,medium,5267,"Rookie, The (2002)",Drama,2,
+Q010,inspirational sports movie,emotion_theme,medium,7263,Miracle (2004),Drama,2,
+Q010,inspirational sports movie,emotion_theme,medium,8937,Friday Night Lights (2004),Action|Drama,1,
+Q010,inspirational sports movie,emotion_theme,medium,31225,Coach Carter (2005),Drama,2,
+Q010,inspirational sports movie,emotion_theme,medium,48161,Gridiron Gang (2006),Drama,2,
+Q010,inspirational sports movie,emotion_theme,medium,151455,Eddie the Eagle (2016),Comedy,2,
+Q010,inspirational sports movie,emotion_theme,medium,183087,Going Vertical (2017),Drama,1,
+Q011,coming-of-age story,emotion_theme,easy,2155,"Slums of Beverly Hills, The (1998)",Comedy|Drama,2,
+Q011,coming-of-age story,emotion_theme,easy,3078,Liberty Heights (1999),Drama,2,
+Q011,coming-of-age story,emotion_theme,easy,33621,Somersault (2004),Drama,1,
+Q011,coming-of-age story,emotion_theme,easy,72113,Is Anybody There? (2008),Drama,2,
+Q011,coming-of-age story,emotion_theme,easy,80693,It's Kind of a Funny Story (2010),Comedy|Drama,2,
+Q011,coming-of-age story,emotion_theme,easy,96592,Hello I Must Be Going (2012),Comedy|Drama|Romance,1,
+Q011,coming-of-age story,emotion_theme,easy,103048,"Kings of Summer, The (2013)",Comedy,2,
+Q011,coming-of-age story,emotion_theme,easy,239490,The Map of Tiny Perfect Things (2021),Comedy|Drama|Fantasy|Romance,2,
+Q012,movie about loneliness and isolation,emotion_theme,medium,6711,Lost in Translation (2003),Comedy|Drama|Romance,2,
+Q012,movie about loneliness and isolation,emotion_theme,medium,81562,127 Hours (2010),Adventure|Drama|Thriller,2,
+Q012,movie about loneliness and isolation,emotion_theme,medium,81791,Somewhere (2010),Drama,2,
+Q012,movie about loneliness and isolation,emotion_theme,medium,89638,Nothing Personal (2009),Drama,2,
+Q012,movie about loneliness and isolation,emotion_theme,medium,105531,"Wall, The (Die Wand) (2012)",Drama|Fantasy,2,
+Q012,movie about loneliness and isolation,emotion_theme,medium,108566,"Man Who Sleeps, The (Un homme qui dort) (1974)",Drama,2,
+Q012,movie about loneliness and isolation,emotion_theme,medium,116155,Still Life (2013),Drama,2,
+Q012,movie about loneliness and isolation,emotion_theme,medium,134214,Youth (2015),Drama,1,
+Q012,movie about loneliness and isolation,emotion_theme,medium,170405,Bokeh (2017),Drama|Sci-Fi,1,
+Q012,movie about loneliness and isolation,emotion_theme,medium,189809,The Night Eats the World (2018),Fantasy|Horror,1,
+Q013,psychological sci-fi movies,multi_condition,medium,1301,Forbidden Planet (1956),Drama|Sci-Fi,0,
+Q013,psychological sci-fi movies,multi_condition,medium,2232,Cube (1997),Horror|Mystery|Sci-Fi|Thriller,1,
+Q013,psychological sci-fi movies,multi_condition,medium,4874,K-PAX (2001),Drama|Fantasy|Mystery|Sci-Fi,1,
+Q013,psychological sci-fi movies,multi_condition,medium,4878,Donnie Darko (2001),Drama|Mystery|Sci-Fi|Thriller,2,
+Q013,psychological sci-fi movies,multi_condition,medium,4975,Vanilla Sky (2001),Mystery|Romance|Sci-Fi|Thriller,2,
+Q013,psychological sci-fi movies,multi_condition,medium,52328,Sunshine (2007),Adventure|Drama|Sci-Fi|Thriller,1,
+Q013,psychological sci-fi movies,multi_condition,medium,68237,Moon (2009),Drama|Mystery|Sci-Fi|Thriller,2,
+Q013,psychological sci-fi movies,multi_condition,medium,113741,Coherence (2013),Drama|Mystery|Sci-Fi|Thriller,2,
+Q013,psychological sci-fi movies,multi_condition,medium,115713,Ex Machina (2015),Drama|Sci-Fi|Thriller,2,
+Q014,romantic comedy with a fake relationship,multi_condition,medium,1854,Kissing a Fool (1998),Comedy|Romance,2,
+Q014,romantic comedy with a fake relationship,multi_condition,medium,2671,Notting Hill (1999),Comedy|Romance,1,
+Q014,romantic comedy with a fake relationship,multi_condition,medium,6837,Love Affair (1939),Comedy|Drama|Romance,0,
+Q014,romantic comedy with a fake relationship,multi_condition,medium,6942,Love Actually (2003),Comedy|Drama|Romance,0,
+Q014,romantic comedy with a fake relationship,multi_condition,medium,70183,"Ugly Truth, The (2009)",Comedy|Drama|Romance,2,
+Q014,romantic comedy with a fake relationship,multi_condition,medium,88163,"Crazy, Stupid, Love. (2011)",Comedy|Drama|Romance,1,
+Q014,romantic comedy with a fake relationship,multi_condition,medium,109483,That Awkward Moment (2014),Comedy|Romance,0,
+Q014,romantic comedy with a fake relationship,multi_condition,medium,113829,"One I Love, The (2014)",Comedy|Drama|Romance,1,
+Q014,romantic comedy with a fake relationship,multi_condition,medium,134393,Trainwreck (2015),Comedy|Romance,0,
+Q015,time travel movie with an emotional story,multi_condition,hard,1265,Groundhog Day (1993),Comedy|Fantasy|Romance,1,
+Q015,time travel movie with an emotional story,multi_condition,hard,104374,About Time (2013),Drama|Fantasy|Romance,2,
+Q015,time travel movie with an emotional story,multi_condition,hard,107130,"Adventure in Space and Time, An (2013)",Drama,1,
+Q015,time travel movie with an emotional story,multi_condition,hard,139419,One Minute Time Machine (2014),Comedy|Mystery|Romance,0,
+Q015,time travel movie with an emotional story,multi_condition,hard,163134,Your Name. (2016),Animation|Drama|Fantasy|Romance,2,
+Q015,time travel movie with an emotional story,multi_condition,hard,239490,The Map of Tiny Perfect Things (2021),Comedy|Drama|Fantasy|Romance,2,
+Q015,time travel movie with an emotional story,multi_condition,hard,262129,Petite maman (2021),Drama|Fantasy,2,
+Q016,crime thriller with a female detective,multi_condition,hard,22,Copycat (1995),Crime|Drama|Horror|Mystery|Thriller,2,
+Q016,crime thriller with a female detective,multi_condition,hard,67255,"Girl with the Dragon Tattoo, The (Män som hatar kvinnor) (2009)",Crime|Drama|Mystery|Thriller,1,
+Q016,crime thriller with a female detective,multi_condition,hard,166568,Miss Sloane (2016),Thriller,0,
+Q016,crime thriller with a female detective,multi_condition,hard,190939,A Simple Favor (2018),Crime|Mystery|Thriller,1,
+Q016,crime thriller with a female detective,multi_condition,hard,194959,Destroyer (2018),Crime|Drama|Thriller,2,
+Q016,crime thriller with a female detective,multi_condition,hard,213397,Promising Young Woman (2020),Crime|Drama|Thriller,0,
+Q016,crime thriller with a female detective,multi_condition,hard,218867,Ava,Action|Crime|Drama|Mystery|Thriller,0,
+Q016,crime thriller with a female detective,multi_condition,hard,279412,Enola Holmes 2 (2022),Adventure|Crime|Mystery,2,
+Q017,space movie with philosophical themes,multi_condition,hard,924,2001: A Space Odyssey (1968),Adventure|Drama|Sci-Fi,2,
+Q017,space movie with philosophical themes,multi_condition,hard,3503,Solaris (Solyaris) (1972),Drama|Mystery|Sci-Fi,2,
+Q017,space movie with philosophical themes,multi_condition,hard,4874,K-PAX (2001),Drama|Fantasy|Mystery|Sci-Fi,1,
+Q017,space movie with philosophical themes,multi_condition,hard,5881,Solaris (2002),Drama|Romance|Sci-Fi,2,
+Q017,space movie with philosophical themes,multi_condition,hard,26578,"Sacrifice, The (Offret - Sacraficatio) (1986)",Drama,0,
+Q017,space movie with philosophical themes,multi_condition,hard,104841,Gravity (2013),Action|Sci-Fi|IMAX,1,
+Q017,space movie with philosophical themes,multi_condition,hard,109487,Interstellar (2014),Sci-Fi|IMAX,2,
+Q018,mystery movie with a major plot twist,multi_condition,medium,47,Seven (a.k.a. Se7en) (1995),Mystery|Thriller,2,
+Q018,mystery movie with a major plot twist,multi_condition,medium,50,"Usual Suspects, The (1995)",Crime|Mystery|Thriller,2,
+Q018,mystery movie with a major plot twist,multi_condition,medium,1617,L.A. Confidential (1997),Crime|Film-Noir|Mystery|Thriller,1,
+Q018,mystery movie with a major plot twist,multi_condition,medium,1625,"Game, The (1997)",Drama|Mystery|Thriller,2,
+Q018,mystery movie with a major plot twist,multi_condition,medium,2762,"Sixth Sense, The (1999)",Drama|Horror|Mystery,2,
+Q018,mystery movie with a major plot twist,multi_condition,medium,4226,Memento (2000),Mystery|Thriller,2,
+Q018,mystery movie with a major plot twist,multi_condition,medium,31427,Hide and Seek (2005),Horror|Mystery|Thriller,1,
+Q018,mystery movie with a major plot twist,multi_condition,medium,74458,Shutter Island (2010),Drama|Mystery|Thriller,2,
+Q018,mystery movie with a major plot twist,multi_condition,medium,80846,Devil (2010),Horror|Mystery|Thriller,1,
+Q018,mystery movie with a major plot twist,multi_condition,medium,176929,Happy Death Day (2017),Horror|Mystery|Thriller,1,
+Q019,movies like Interstellar,similar_movie,medium,924,2001: A Space Odyssey (1968),Adventure|Drama|Sci-Fi,2,
+Q019,movies like Interstellar,similar_movie,medium,1356,Star Trek: First Contact (1996),Action|Adventure|Sci-Fi|Thriller,1,
+Q019,movies like Interstellar,similar_movie,medium,1876,Deep Impact (1998),Drama|Sci-Fi|Thriller,2,
+Q019,movies like Interstellar,similar_movie,medium,26285,Dark Star (1974),Comedy|Sci-Fi|Thriller,1,
+Q019,movies like Interstellar,similar_movie,medium,36363,Kin-Dza-Dza! (1986),Comedy|Drama|Sci-Fi,1,
+Q019,movies like Interstellar,similar_movie,medium,68358,Star Trek (2009),Action|Adventure|Sci-Fi|IMAX,1,
+Q019,movies like Interstellar,similar_movie,medium,81847,Tangled (2010),Animation|Children|Comedy|Fantasy|Musical|Romance|IMAX,0,
+Q019,movies like Interstellar,similar_movie,medium,102445,Star Trek Into Darkness (2013),Action|Adventure|Sci-Fi|IMAX,1,
+Q019,movies like Interstellar,similar_movie,medium,109487,Interstellar (2014),Sci-Fi|IMAX,2,
+Q020,movies similar to Toy Story,similar_movie,medium,1,Toy Story (1995),Adventure|Animation|Children|Comedy|Fantasy,2,
+Q020,movies similar to Toy Story,similar_movie,medium,2804,"Christmas Story, A (1983)",Children|Comedy,0,
+Q020,movies similar to Toy Story,similar_movie,medium,3114,Toy Story 2 (1999),Adventure|Animation|Children|Comedy|Fantasy,2,
+Q020,movies similar to Toy Story,similar_movie,medium,78499,Toy Story 3 (2010),Adventure|Animation|Children|Comedy|Fantasy|IMAX,2,
+Q020,movies similar to Toy Story,similar_movie,medium,115879,Toy Story Toons: Small Fry (2011),Adventure|Animation|Children|Comedy|Fantasy,2,
+Q020,movies similar to Toy Story,similar_movie,medium,120474,Toy Story That Time Forgot (2014),Animation|Children,2,
+Q020,movies similar to Toy Story,similar_movie,medium,201588,Toy Story 4 (2019),Adventure|Animation|Children|Comedy,2,
+Q021,movies like The Godfather,similar_movie,medium,858,"Godfather, The (1972)",Crime|Drama,2,
+Q021,movies like The Godfather,similar_movie,medium,1213,Goodfellas (1990),Crime|Drama,2,
+Q021,movies like The Godfather,similar_movie,medium,1221,"Godfather: Part II, The (1974)",Crime|Drama,2,
+Q021,movies like The Godfather,similar_movie,medium,2023,"Godfather: Part III, The (1990)",Crime|Drama|Mystery|Thriller,2,
+Q021,movies like The Godfather,similar_movie,medium,8607,Tokyo Godfathers (2003),Adventure|Animation|Drama,1,
+Q021,movies like The Godfather,similar_movie,medium,25934,3 Godfathers (1948),Drama|Western,1,
+Q021,movies like The Godfather,similar_movie,medium,53993,Evan Almighty (2007),Comedy|Fantasy,0,
+Q021,movies like The Godfather,similar_movie,medium,102407,"Great Gatsby, The (2013)",Drama,1,
+Q022,movies similar to Shutter Island,similar_movie,medium,3471,Close Encounters of the Third Kind (1977),Adventure|Drama|Sci-Fi,0,
+Q022,movies similar to Shutter Island,similar_movie,medium,4975,Vanilla Sky (2001),Mystery|Romance|Sci-Fi|Thriller,2,
+Q022,movies similar to Shutter Island,similar_movie,medium,34405,Serenity (2005),Action|Adventure|Sci-Fi,0,
+Q022,movies similar to Shutter Island,similar_movie,medium,45003,Shutter (2004),Fantasy|Horror|Mystery|Thriller,1,
+Q022,movies similar to Shutter Island,similar_movie,medium,45722,Pirates of the Caribbean: Dead Man's Chest (2006),Action|Adventure|Fantasy,0,
+Q022,movies similar to Shutter Island,similar_movie,medium,59715,Shutter (2008),Horror|Mystery|Thriller,1,
+Q022,movies similar to Shutter Island,similar_movie,medium,74458,Shutter Island (2010),Drama|Mystery|Thriller,2,
+Q022,movies similar to Shutter Island,similar_movie,medium,122896,Pirates of the Caribbean: Dead Men Tell No Tales (2017),(no genres listed),0,
+Q022,movies similar to Shutter Island,similar_movie,medium,152077,10 Cloverfield Lane (2016),Thriller,2,
+Q022,movies similar to Shutter Island,similar_movie,medium,222011,Greenland (2020),Action|Sci-Fi|Thriller,0,
+Q023,horror movie without ghosts,negative_constraint,hard,1331,Audrey Rose (1977),Horror,0,
+Q023,horror movie without ghosts,negative_constraint,hard,1982,Halloween (1978),Horror,2,
+Q023,horror movie without ghosts,negative_constraint,hard,2867,Fright Night (1985),Comedy|Horror|Thriller,1,
+Q023,horror movie without ghosts,negative_constraint,hard,3081,Sleepy Hollow (1999),Fantasy|Horror|Mystery|Romance,1,
+Q023,horror movie without ghosts,negative_constraint,hard,6290,House of 1000 Corpses (2003),Horror,2,
+Q023,horror movie without ghosts,negative_constraint,hard,7289,"Silent Night, Bloody Night (1973)",Horror,2,
+Q023,horror movie without ghosts,negative_constraint,hard,45852,See No Evil (2006),Horror,2,
+Q023,horror movie without ghosts,negative_constraint,hard,74370,"House of the Devil, The (2009)",Horror|Thriller,2,
+Q023,horror movie without ghosts,negative_constraint,hard,75395,Frozen (2010),Drama|Horror|Thriller,2,
+Q023,horror movie without ghosts,negative_constraint,hard,85788,Insidious (2010),Fantasy|Horror|Thriller,0,
+Q023,horror movie without ghosts,negative_constraint,hard,93819,Absentia (2011),Horror,0,
+Q023,horror movie without ghosts,negative_constraint,hard,97785,Silent Hill: Revelation 3D (2012),Horror|Mystery|Thriller,1,
+Q024,family animation that is not adult comedy,negative_constraint,hard,6377,Finding Nemo (2003),Adventure|Animation|Children|Comedy,2,
+Q024,family animation that is not adult comedy,negative_constraint,hard,42734,Hoodwinked! (2005),Animation|Children|Comedy,1,
+Q024,family animation that is not adult comedy,negative_constraint,hard,72356,Partly Cloudy (2009),Animation|Children|Comedy|Fantasy,2,
+Q024,family animation that is not adult comedy,negative_constraint,hard,134853,Inside Out (2015),Adventure|Animation|Children|Comedy|Drama|Fantasy,2,
+Q024,family animation that is not adult comedy,negative_constraint,hard,158872,Sausage Party (2016),Animation|Comedy,0,
+Q024,family animation that is not adult comedy,negative_constraint,hard,163809,Over the Garden Wall (2013),Adventure|Animation|Drama,1,
+Q024,family animation that is not adult comedy,negative_constraint,hard,168418,The Boss Baby (2017),Animation|Children|Comedy,2,
+Q024,family animation that is not adult comedy,negative_constraint,hard,180987,Ferdinand (2017),Animation|Children|Comedy,2,
+Q024,family animation that is not adult comedy,negative_constraint,hard,189873,Bao (2018),Animation,2,
+Q024,family animation that is not adult comedy,negative_constraint,hard,286903,Elemental (2023),Animation|Children|Comedy|Fantasy|Romance,2,
+Q025,sad drama that is not a romance,negative_constraint,hard,7158,House of Sand and Fog (2003),Drama,2,
+Q025,sad drama that is not a romance,negative_constraint,hard,59118,Happy-Go-Lucky (2008),Comedy|Drama,2,
+Q025,sad drama that is not a romance,negative_constraint,hard,64716,Seven Pounds (2008),Drama,2,
+Q025,sad drama that is not a romance,negative_constraint,hard,78039,Blue Valentine (2010),Drama|Romance,0,
+Q025,sad drama that is not a romance,negative_constraint,hard,82463,Another Year (2010),Drama,2,
+Q025,sad drama that is not a romance,negative_constraint,hard,95088,Safety Not Guaranteed (2012),Comedy|Drama,2,
+Q025,sad drama that is not a romance,negative_constraint,hard,134214,Youth (2015),Drama,2,
+Q025,sad drama that is not a romance,negative_constraint,hard,168610,A Ghost Story (2017),Drama,2,
+Q025,sad drama that is not a romance,negative_constraint,hard,168712,Fifty Shades Darker (2017),Drama|Romance,0,
+Q025,sad drama that is not a romance,negative_constraint,hard,288269,No Hard Feelings (2023),Comedy|Romance,0,
+Q026,superhero movie without comedy,negative_constraint,hard,2723,Mystery Men (1999),Action|Comedy|Fantasy,1,
+Q026,superhero movie without comedy,negative_constraint,hard,5053,Blankman (1994),Comedy,0,
+Q026,superhero movie without comedy,negative_constraint,hard,8376,Napoleon Dynamite (2004),Comedy,0,
+Q026,superhero movie without comedy,negative_constraint,hard,34150,Fantastic Four (2005),Action|Adventure|Sci-Fi,2,
+Q026,superhero movie without comedy,negative_constraint,hard,59014,Superhero Movie (2008),Action|Comedy|Sci-Fi,0,
+Q026,superhero movie without comedy,negative_constraint,hard,59315,Iron Man (2008),Action|Adventure|Sci-Fi,2,
+Q026,superhero movie without comedy,negative_constraint,hard,81564,Megamind (2010),Action|Animation|Children|Comedy|Sci-Fi|IMAX,1,
+Q026,superhero movie without comedy,negative_constraint,hard,89745,"Avengers, The (2012)",Action|Adventure|Sci-Fi|IMAX,2,
+Q027,I want a movie that makes me think deeply,natural_language,hard,7361,Eternal Sunshine of the Spotless Mind (2004),Drama|Romance|Sci-Fi,2,
+Q027,I want a movie that makes me think deeply,natural_language,hard,7371,Dogville (2003),Drama|Mystery|Thriller,2,
+Q027,I want a movie that makes me think deeply,natural_language,hard,44191,V for Vendetta (2006),Action|Sci-Fi|Thriller|IMAX,1,
+Q027,I want a movie that makes me think deeply,natural_language,hard,74416,Fish Tank (2009),Drama,1,
+Q027,I want a movie that makes me think deeply,natural_language,hard,79132,Inception (2010),Action|Crime|Drama|Mystery|Sci-Fi|Thriller|IMAX,2,
+Q027,I want a movie that makes me think deeply,natural_language,hard,86898,"Tree of Life, The (2011)",Drama,2,
+Q027,I want a movie that makes me think deeply,natural_language,hard,143367,Silence (2016),Drama|Thriller,2,
+Q027,I want a movie that makes me think deeply,natural_language,hard,190555,Searching (2018),Drama,1,
+Q027,I want a movie that makes me think deeply,natural_language,hard,202433,A Hidden Life (2019),Drama|War,2,
+Q028,I need something light to watch after work,natural_language,hard,1875,Clockwatchers (1997),Comedy,2,
+Q028,I need something light to watch after work,natural_language,hard,3954,Just Looking (1999),Comedy,2,
+Q028,I need something light to watch after work,natural_language,hard,46578,Little Miss Sunshine (2006),Adventure|Comedy|Drama,2,
+Q028,I need something light to watch after work,natural_language,hard,109848,Under the Skin (2013),Horror|Sci-Fi|Thriller,0,
+Q028,I need something light to watch after work,natural_language,hard,140110,The Intern (2015),Comedy,2,
+Q028,I need something light to watch after work,natural_language,hard,160571,Lights Out (2016),Horror,1,
+Q028,I need something light to watch after work,natural_language,hard,188623,Burning (2018),Drama|Mystery,0,
+Q028,I need something light to watch after work,natural_language,hard,275503,Aftersun (2022),Drama,1,
+Q029,Recommend a movie I can watch with my family this weekend,natural_language,hard,102286,Family Weekend (2013),Comedy|Drama,1,
+Q029,Recommend a movie I can watch with my family this weekend,natural_language,hard,133185,The Bélier Family (2014),Comedy,2,
+Q029,Recommend a movie I can watch with my family this weekend,natural_language,hard,180555,Mom and Dad (2017),Horror|Thriller,0,
+Q029,Recommend a movie I can watch with my family this weekend,natural_language,hard,187541,Incredibles 2 (2018),Action|Adventure|Animation|Children,2,
+Q029,Recommend a movie I can watch with my family this weekend,natural_language,hard,189873,Bao (2018),Animation,2,
+Q029,Recommend a movie I can watch with my family this weekend,natural_language,hard,193942,Instant Family (2018),Comedy,2,
+Q029,Recommend a movie I can watch with my family this weekend,natural_language,hard,193960,Wildlife (2018),Drama,1,
+Q029,Recommend a movie I can watch with my family this weekend,natural_language,hard,194448,Green Book (2018),Comedy|Drama,1,
+Q029,Recommend a movie I can watch with my family this weekend,natural_language,hard,243208,Yes Day (2021),Children|Comedy,2,
+Q030,I want an emotional movie that will stay with me for days,natural_language,hard,2324,Life Is Beautiful (La Vita è bella) (1997),Comedy|Drama|Romance|War,2,
+Q030,I want an emotional movie that will stay with me for days,natural_language,hard,7361,Eternal Sunshine of the Spotless Mind (2004),Drama|Romance|Sci-Fi,2,
+Q030,I want an emotional movie that will stay with me for days,natural_language,hard,39427,Stay (2005),Thriller,0,
+Q030,I want an emotional movie that will stay with me for days,natural_language,hard,47099,"Pursuit of Happyness, The (2006)",Drama,1,
+Q030,I want an emotional movie that will stay with me for days,natural_language,hard,81562,127 Hours (2010),Adventure|Drama|Thriller,1,
+Q030,I want an emotional movie that will stay with me for days,natural_language,hard,92259,Intouchables (2011),Comedy|Drama,1,
+Q030,I want an emotional movie that will stay with me for days,natural_language,hard,104374,About Time (2013),Drama|Fantasy|Romance,2,
+Q030,I want an emotional movie that will stay with me for days,natural_language,hard,113604,If I Stay (2014),Drama,0,
+Q030,I want an emotional movie that will stay with me for days,natural_language,hard,165549,Manchester by the Sea (2016),Drama,2,
+Q030,I want an emotional movie that will stay with me for days,natural_language,hard,165551,Lion (2016),Drama,2,
+Q030,I want an emotional movie that will stay with me for days,natural_language,hard,236991,CODA (2021),Drama,1,
+Q001,dark supernatural horror movies,genre,easy,183869,Hereditary (2018),(no genres listed),2,"Hereditary is a quintessential dark supernatural horror movie, dealing with occult themes, demonic possession, and terrifying supernatural forces."
+Q001,dark supernatural horror movies,genre,easy,8507,Freaks (1932),Crime|Drama|Horror,1,"While 'Freaks' is a classic horror film with a dark, unsettling atmosphere, it is generally classified as a pre-Code psychological horror/drama rather than a supernatural horror movie, as its horror stems from human nature and reality rather than supernatural elements."
+Q001,dark supernatural horror movies,genre,easy,26717,Begotten (1990),Drama|Horror,2,"""Begotten"" is an experimental, avant-garde dark horror film heavily rooted in surreal, apocalyptic, and supernatural themes, making it a fitting match for dark supernatural horror."
+Q001,dark supernatural horror movies,genre,easy,3676,Eraserhead (1977),Drama|Horror,2,"Eraserhead is a quintessential dark and surreal supernatural horror movie, fitting the user's request for dark horror themes."
+Q002,romantic comedy movies,genre,easy,118814,Playing It Cool (2014),Comedy|Romance,2,"The movie 'Playing It Cool (2014)' belongs to the genres Comedy and Romance, which perfectly matches the user's query for 'romantic comedy movies'."
+Q002,romantic comedy movies,genre,easy,33145,"Lot Like Love, A (2005)",Comedy|Drama|Romance,2,"The movie 'A Lot Like Love' (2005) is a classic romantic comedy featuring elements of both comedy and romance, making it a perfect match for the user's query."
+Q002,romantic comedy movies,genre,easy,4639,America's Sweethearts (2001),Comedy|Romance,2,"America's Sweethearts (2001) is a romantic comedy movie, fitting the user's explicit query perfectly with matching genres of Comedy and Romance."
+Q004,animated family movies,genre,easy,160874,"Life, Animated (2016)",Animation|Documentary,1,"While 'Life, Animated' features 'Animation' and is family-friendly, it is a documentary about a real person with autism using Disney films to communicate, rather than a traditional animated family feature film."
+Q004,animated family movies,genre,easy,286903,Elemental (2023),Animation|Children|Comedy|Fantasy|Romance,2,"Elemental (2023) is an animated film produced by Pixar, featuring themes suitable for children and families, making it a perfect match for the user's query."
+Q004,animated family movies,genre,easy,68954,Up (2009),Adventure|Animation|Children|Drama,2,"Up (2009) is an animated film produced by Pixar, making it a perfect fit for the 'animated family movies' query, and it also features genres like Adventure and Children/Drama suitable for family audiences."
+Q005,science fiction space movies,genre,easy,260,Star Wars: Episode IV - A New Hope (1977),Action|Adventure|Sci-Fi,2,"Star Wars: Episode IV - A New Hope is a quintessential science fiction space movie featuring space travel, futuristic technology, and science fiction themes, perfectly matching the user's query."
+Q005,science fiction space movies,genre,easy,68358,Star Trek (2009),Action|Adventure|Sci-Fi|IMAX,2,"Star Trek (2009) is a quintessential science fiction space movie featuring space exploration, starships, and futuristic technology, perfectly matching the user's query."
+Q006,historical war drama,genre,easy,3753,"Patriot, The (2000)",Action|Drama|War,2,"The movie 'The Patriot' (2000) is a historical war drama set during the American Revolutionary War, perfectly matching all the elements of the user's query."
+Q006,historical war drama,genre,easy,110,Braveheart (1995),Action|Drama|War,2,"Braveheart is a quintessential historical war drama set during the First War of Scottish Independence, perfectly matching all the elements of the user's query."
+Q006,historical war drama,genre,easy,163645,Hacksaw Ridge (2016),Drama|War,2,Hacksaw Ridge (2016) is a biographical historical war drama that directly matches all aspects of the user's query.
+Q007,sad movie about father and son,emotion_theme,medium,190555,Searching (2018),Drama,2,"Searching (2018) is a deeply emotional drama centered around a father desperately searching for his missing son, perfectly matching the themes of the user's query."
+Q007,sad movie about father and son,emotion_theme,medium,3967,Billy Elliot (2000),Drama,2,"Billy Elliot is a poignant drama that deeply explores the strained and ultimately emotional relationship between a widowed father and his son, who wants to be a ballet dancer, perfectly matching the user's request for a sad movie about a father and son."
+Q007,sad movie about father and son,emotion_theme,medium,177231,Brad's Status (2017),Comedy,1,"While 'Brad's Status' features a central father-son dynamic and has emotional, poignant moments, it is primarily classified as a comedy-drama rather than a strictly 'sad movie' about a father and son."
+Q007,sad movie about father and son,emotion_theme,medium,166705,Fences (2016),Drama,2,"Fences is a powerful and deeply emotional drama that heavily centers on the complex, often painful relationship between a father and his son."
+Q008,emotional movie about friendship,emotion_theme,medium,81845,"King's Speech, The (2010)",Drama,1,"While 'The King's Speech' is an emotional drama that features a powerful and moving central friendship between King George VI and his speech therapist Lionel Logue, it is primarily focused on overcoming a speech impediment and historical context rather than being universally categorized as a friendship-centric movie."
+Q008,emotional movie about friendship,emotion_theme,medium,163909,Divines (2016),Drama,1,"Divines (2016) is a powerful, emotional drama centered around a complex friendship between two young women in the banlieues of Paris. While it fits the themes of 'emotional' and 'friendship', it is also a gritty crime-drama about drug dealing, which differs slightly from traditional heartwarming friendship films."
+Q008,emotional movie about friendship,emotion_theme,medium,190555,Searching (2018),Drama,1,"While 'Searching' (2018) is a powerful emotional drama, its central theme revolves around a father searching for his missing daughter (family relationship/parental love) rather than friendship."
+Q009,movie about grief and loss,emotion_theme,medium,190555,Searching (2018),Drama,2,"Searching (2018) is a drama that deeply explores themes of grief and loss, centering on a father searching for his missing daughter while coping with the recent death of his wife."
+Q009,movie about grief and loss,emotion_theme,medium,183869,Hereditary (2018),(no genres listed),2,"Hereditary (2018) is a deeply thematic movie about grief, loss, and the devastating psychological impact of trauma and family tragedy, making it highly relevant to the user's query."
+Q010,inspirational sports movie,emotion_theme,medium,72641,"Blind Side, The  (2009)",Drama,2,"The movie 'The Blind Side' (2009) is a well-known inspirational sports drama based on a true story, perfectly matching the user's query."
+Q011,coming-of-age story,emotion_theme,easy,130628,Boys (2014),Drama,2,"Boys (2014) is a Dutch drama film that centers on a 15-year-old track athlete experiencing his first love during a summer training camp, making it a classic coming-of-age story."
+Q011,coming-of-age story,emotion_theme,easy,101415,"First Time, The (2012)",Comedy|Drama|Romance,2,"The movie 'The First Time' (2012) is a quintessential coming-of-age teen romantic comedy-drama that centers around high school students navigating the emotional complexities of first love and growing up over a single weekend, making it a perfect match for the user's query."
+Q012,movie about loneliness and isolation,emotion_theme,medium,212373,I'm Thinking of Ending Things,Drama|Horror|Thriller,2,"The movie deeply explores themes of loneliness, isolation, existential dread, and the human psychological condition, making it a strong match for the user's query."
+Q012,movie about loneliness and isolation,emotion_theme,medium,86320,Melancholia (2011),Drama|Sci-Fi,2,"Melancholia (2011) deeply explores themes of profound depression, emotional isolation, and existential loneliness against the backdrop of an impending planetary collision, making it a strong thematic match for the user's query."
+Q012,movie about loneliness and isolation,emotion_theme,medium,162414,Moonlight,Drama,2,"Moonlight is a profound drama that deeply explores themes of loneliness, isolation, alienation, and the struggle for human connection across three distinct chapters of a young man's life."
+Q013,psychological sci-fi movies,multi_condition,medium,55908,"Man from Earth, The (2007)",Drama|Sci-Fi,2,"The movie is a quintessential intellectual and psychological sci-fi film that takes place entirely in one room, focusing on deep philosophical and scientific dialogue about a man claiming to be a prehistoric caveman surviving for 14,000 years."
+Q013,psychological sci-fi movies,multi_condition,medium,79132,Inception (2010),Action|Crime|Drama|Mystery|Sci-Fi|Thriller|IMAX,2,"Inception is a quintessential psychological sci-fi movie that heavily explores concepts of the mind, dreams, memory, and reality, perfectly matching the user's query."
+Q013,psychological sci-fi movies,multi_condition,medium,84152,Limitless (2011),Sci-Fi|Thriller,2,"Limitless is a psychological sci-fi thriller that explores the psychological effects and heightened cognitive abilities gained from a revolutionary nootropic drug, perfectly fitting the user's query."
+Q015,time travel movie with an emotional story,multi_condition,hard,164179,Arrival (2016),Sci-Fi,1,"While 'Arrival' is a deeply emotional sci-fi drama, it deals with non-linear perception of time rather than traditional time travel, making it only partially relevant to the user's specific request for a 'time travel movie'."
+Q015,time travel movie with an emotional story,multi_condition,hard,115680,Time Lapse (2014),Crime|Drama|Sci-Fi|Thriller,1,"While 'Time Lapse' is a sci-fi thriller about time (specifically a camera taking pictures of the future), it focuses heavily on paranoia, greed, and suspense among roommates rather than being primarily known for an emotional story."
+Q015,time travel movie with an emotional story,multi_condition,hard,1721,Titanic (1997),Drama|Romance,0,Titanic (1997) is a historical romance drama about the 1912 sinking of the ship and does not feature time travel.
+Q015,time travel movie with an emotional story,multi_condition,hard,109487,Interstellar (2014),Sci-Fi|IMAX,2,"Interstellar features time dilation and space travel which function as time manipulation elements, and it is deeply focused on an emotional story about the bond between a father and his daughter."
+Q019,movies like Interstellar,similar_movie,medium,164179,Arrival (2016),Sci-Fi,2,"Arrival (2016) is a critically acclaimed cerebral sci-fi film that deals with complex scientific and philosophical themes, time, and space, making it one of the closest thematic matches to Interstellar."
+Q019,movies like Interstellar,similar_movie,medium,79132,Inception (2010),Action|Crime|Drama|Mystery|Sci-Fi|Thriller|IMAX,2,"Inception is directed by Christopher Nolan, the same director as Interstellar, and shares key themes of complex high-concept sci-fi, mind-bending plots, stunning visual effects, and emotional depth."
+Q019,movies like Interstellar,similar_movie,medium,52328,Sunshine (2007),Adventure|Drama|Sci-Fi|Thriller,2,"Sunshine (2007) is an exceptional match for fans of Interstellar. It is a visually stunning, tense sci-fi drama about a crew of astronauts on a desperate mission to save a dying sun/Earth, sharing major thematic and aesthetic similarities with Interstellar."
+Q021,movies like The Godfather,similar_movie,medium,4262,Scarface (1983),Action|Crime|Drama,2,"Scarface (1983) is a classic crime drama that explores the rise and fall of a mob figure, sharing major thematic elements, tone, and genre with The Godfather."
+Q021,movies like The Godfather,similar_movie,medium,4034,Traffic (2000),Crime|Drama|Thriller,1,"While 'Traffic' shares the crime and drama genres and deals with organized crime (drug cartels) similar to 'The Godfather', it focuses on multiple perspectives of the modern war on drugs rather than the intimate, epic saga of a specific criminal dynasty."
+Q022,movies similar to Shutter Island,similar_movie,medium,4226,Memento (2000),Mystery|Thriller,2,"Memento is a critically acclaimed psychological thriller and mystery that, much like Shutter Island, heavily features unreliable narration, a protagonist grappling with a distorted sense of reality, and mind-bending plot twists."
+Q022,movies similar to Shutter Island,similar_movie,medium,2762,"Sixth Sense, The (1999)",Drama|Horror|Mystery,2,"The Sixth Sense shares key thematic elements with Shutter Island, particularly being a psychological thriller with a heavy atmosphere, mystery, and a famous mind-bending twist ending."
+Q022,movies similar to Shutter Island,similar_movie,medium,4878,Donnie Darko (2001),Drama|Mystery|Sci-Fi|Thriller,2,"Donnie Darko shares a deeply psychological, mind-bending tone with Shutter Island, featuring unreliable narration, themes of mental illness, mystery, and reality-warping twists that appeal to fans of psychological thrillers."
+Q022,movies similar to Shutter Island,similar_movie,medium,4848,Mulholland Drive (2001),Crime|Drama|Film-Noir|Mystery|Thriller,2,"Mulholland Drive shares strong thematic similarities with Shutter Island, including psychological mystery, a shifting perception of reality, neo-noir elements, and mind-bending plot twists that leave audiences questioning what is real."
+Q023,horror movie without ghosts,negative_constraint,hard,185029,A Quiet Place (2018),Drama|Horror|Thriller,2,"A Quiet Place is a horror movie that features blind alien monsters with acute hearing as the threat, completely avoiding ghosts, perfectly matching the user's constraint."
+Q023,horror movie without ghosts,negative_constraint,hard,183869,Hereditary (2018),(no genres listed),2,"Hereditary is a critically acclaimed horror movie that focuses on psychological trauma, grief, and demonic/occult themes rather than traditional ghosts, perfectly satisfying the user's constraint of a horror movie without ghosts."
+Q023,horror movie without ghosts,negative_constraint,hard,59727,"Strangers, The (2008)",Horror|Thriller,2,"The movie 'The Strangers' (2008) is a horror/thriller film focused on home-invasion by human killers, containing no ghosts, thereby perfectly matching the user's explicit constraint."
+Q023,horror movie without ghosts,negative_constraint,hard,279182,Smile (2022),Horror,2,"Smile (2022) is a horror movie that deals with a malevolent supernatural entity and psychological trauma, but it does not feature ghosts, making it a strong match for the user's constraints."
+Q024,family animation that is not adult comedy,negative_constraint,hard,68954,Up (2009),Adventure|Animation|Children|Drama,2,"Up is a family-friendly animation that falls under Adventure, Animation, Children, and Drama, fulfilling all criteria and avoiding adult comedy."
+Q024,family animation that is not adult comedy,negative_constraint,hard,364,"Lion King, The (1994)",Adventure|Animation|Children|Drama|Musical|IMAX,2,"The Lion King (1994) is a classic family animation film that focuses on adventure, drama, and musical elements without being an adult comedy, perfectly matching the user's criteria."
+Q024,family animation that is not adult comedy,negative_constraint,hard,224264,Connected (2020),Adventure|Animation|Children|Comedy|Sci-Fi,2,"Connected (2020) is a family-friendly animated sci-fi adventure film. Although it has a comedy genre tag, it is a wholesome family comedy rather than an 'adult comedy', making it a great match for the user's request."
+Q024,family animation that is not adult comedy,negative_constraint,hard,213207,Onward (2020),Adventure|Animation|Children|Comedy|Fantasy,1,"While 'Onward' is a family animation film which fits the primary request, its genres include 'Comedy', meaning it has comedic elements, though it is not an 'adult comedy'."
+Q025,sad drama that is not a romance,negative_constraint,hard,165549,Manchester by the Sea (2016),Drama,2,"Manchester by the Sea is a critically acclaimed sad drama that focuses heavily on grief, family tragedy, and loss, with no romantic plotline, perfectly matching all constraints of the user's query."
+Q025,sad drama that is not a romance,negative_constraint,hard,183869,Hereditary (2018),(no genres listed),1,"Hereditary is a very sad and devastating drama about grief and trauma, and it is not a romance. However, it is primarily classified as a horror movie rather than a straightforward drama, which makes it only partially relevant to the user's specific intent."
+Q025,sad drama that is not a romance,negative_constraint,hard,162414,Moonlight,Drama,2,Moonlight is a critically acclaimed sad drama that focuses on the identity and life struggles of the protagonist rather than being a romance.
+Q025,sad drama that is not a romance,negative_constraint,hard,129781,About Alex (2014),Drama,2,"""About Alex"" is a drama film about a group of friends gathering after the suicide of one of their college friends. It focuses heavily on themes of grief, mental health, and friendship, fitting the 'sad drama' criteria while not being a romance."
+Q026,superhero movie without comedy,negative_constraint,hard,204698,Joker (2019),Crime|Drama|Thriller,2,"Joker (2019) is a comic book/superhero-based movie that is famously known for its gritty, dark, and serious tone entirely devoid of the comedic elements typical of the superhero genre."
+Q026,superhero movie without comedy,negative_constraint,hard,115569,Nightcrawler (2014),Crime|Drama|Thriller,0,"Nightcrawler is a crime thriller about a sociopathic stringer, not a superhero movie."
+Q026,superhero movie without comedy,negative_constraint,hard,183869,Hereditary (2018),(no genres listed),0,"Hereditary is a psychological horror film, not a superhero movie."
+Q026,superhero movie without comedy,negative_constraint,hard,67197,Knowing (2009),Action|Drama|Mystery|Sci-Fi|Thriller,0,"The user asked for a superhero movie, but 'Knowing (2009)' is a sci-fi thriller/drama about a teacher and numerical predictions, not a superhero movie."
+Q026,superhero movie without comedy,negative_constraint,hard,104879,Prisoners (2013),Drama|Mystery|Thriller,0,"Prisoners (2013) is a crime drama, mystery, and thriller, not a superhero movie."
+Q027,I want a movie that makes me think deeply,natural_language,hard,108729,Enemy (2013),Mystery|Thriller,2,"Enemy (2013) is a psychological thriller known for its deeply ambiguous, complex narrative and symbolic imagery, making it a quintessential film that prompts extensive critical thought and analysis."
+Q027,I want a movie that makes me think deeply,natural_language,hard,204698,Joker (2019),Crime|Drama|Thriller,2,"Joker (2019) is a psychological character study that explores complex themes such as mental illness, societal neglect, the impact of the media, and class struggle, which naturally prompts deep reflection and discussion from viewers."
+Q027,I want a movie that makes me think deeply,natural_language,hard,6323,Identity (2003),Crime|Horror|Mystery|Thriller,2,"Identity (2003) is a psychological thriller and mystery known for its complex, mind-bending plot involving multiple personalities and a twist ending that heavily engages the viewer and prompts deep thought about the nature of the human mind and identity."
+Q027,I want a movie that makes me think deeply,natural_language,hard,1464,Lost Highway (1997),Crime|Drama|Fantasy|Film-Noir|Mystery|Romance,2,"Lost Highway is a psychological neo-noir mystery directed by David Lynch, known for its complex, non-linear narrative, dream logic, and deeply philosophical themes about identity and guilt, making it a quintessential film for making viewers think deeply."
+Q028,I need something light to watch after work,natural_language,hard,68954,Up (2009),Adventure|Animation|Children|Drama,2,"Up is a heartwarming, entertaining, and visually delightful animated adventure that is well-suited for relaxing and unwinding after a long day of work."
+Q028,I need something light to watch after work,natural_language,hard,6377,Finding Nemo (2003),Adventure|Animation|Children|Comedy,2,"Finding Nemo is an animated, comedic, and lighthearted family adventure film, which perfectly fits the user's request for something light to watch after work."
+Q028,I need something light to watch after work,natural_language,hard,134853,Inside Out (2015),Adventure|Animation|Children|Comedy|Drama|Fantasy,2,"Inside Out is an animated, family-friendly comedy-adventure that is engaging and emotionally uplifting, making it a great lighthearted choice to unwind after work."
+Q028,I need something light to watch after work,natural_language,hard,81847,Tangled (2010),Animation|Children|Comedy|Fantasy|Musical|Romance|IMAX,2,"Tangled is an animated, family-friendly musical comedy with a lighthearted tone, making it a perfect, stress-free watch to unwind after work."
+Q029,Recommend a movie I can watch with my family this weekend,natural_language,hard,213207,Onward (2020),Adventure|Animation|Children|Comedy|Fantasy,2,"Onward (2020) is an animated family adventure film filled with comedy and fantasy, making it a perfect choice for a family movie night over the weekend."
+Q029,Recommend a movie I can watch with my family this weekend,natural_language,hard,224264,Connected (2020),Adventure|Animation|Children|Comedy|Sci-Fi,2,"Connected (2020) is an animated family-friendly comedy with adventure and sci-fi elements, making it an ideal choice for a weekend movie with the family."
+Q029,Recommend a movie I can watch with my family this weekend,natural_language,hard,52287,Meet the Robinsons (2007),Action|Adventure|Animation|Children|Comedy|Sci-Fi,2,"Meet the Robinsons is a family-friendly animated film that appeals to all ages, making it a perfect choice for a weekend movie night with the family."
+Q029,Recommend a movie I can watch with my family this weekend,natural_language,hard,68954,Up (2009),Adventure|Animation|Children|Drama,2,"Up (2009) is an acclaimed animated adventure film that appeals to all ages, making it a perfect choice for family viewing over the weekend."
+Q030,I want an emotional movie that will stay with me for days,natural_language,hard,7147,Big Fish (2003),Drama|Fantasy|Romance,2,"Big Fish is a deeply emotional drama that explores themes of family, mortality, and storytelling. Its poignant exploration of the relationship between a father and son leaves a lasting, memorable impact on viewers, perfectly fitting the user's request."
+Q030,I want an emotional movie that will stay with me for days,natural_language,hard,55052,Atonement (2007),Drama|Romance|War,2,"Atonement is a powerful, deeply emotional drama known for its tragic romance and devastating ending that famously leaves a lasting impact on viewers for days."
+Q030,I want an emotional movie that will stay with me for days,natural_language,hard,180095,Wonder (2017),Drama,2,"Wonder is a powerful, heartwarming drama known for evoking strong emotional responses and leaving a lasting impression on viewers, perfectly matching the user's request for an emotional movie that stays with them."
+Q030,I want an emotional movie that will stay with me for days,natural_language,hard,192803,Bohemian Rhapsody (2018),Drama,1,"While 'Bohemian Rhapsody' is a biographical drama that features emotionally powerful musical performances and a poignant ending, it is often seen more as a celebratory tribute to Freddie Mercury and Queen rather than a deeply devastating emotional film that stays with viewers for days, making it only partially aligned with the specific prompt."

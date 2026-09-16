@@ -24,7 +24,7 @@ def test_quality_mode_uses_hybrid_with_ce(
     assert payload["configuration"] == "hybrid_with_ce"
     assert payload["top_k"] == 5
     assert len(payload["recommendations"]) == 5
-    assert payload["explanation"] == ""
+    assert payload["recommendations"][0].get("explanation") in (None, "")
     assert payload["timings"]["generation_seconds"] == 0.0
 
 
@@ -86,7 +86,7 @@ def test_explanation_can_be_enabled(
 
     payload = response.json()
 
-    assert payload["explanation"] == "Test explanation."
+    assert payload["recommendations"][0]["explanation"] == "Test explanation."
     assert payload["timings"]["generation_seconds"] > 0
 
 

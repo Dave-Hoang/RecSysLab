@@ -130,7 +130,7 @@ def compute_semantic_similarity(
             Candidate DataFrame có cột faiss_distance.
 
     Returns:
-        DataFrame có thêm semantic_similarity.
+        DataFrame có thêm semantic_score_relative, faiss_squared_l2_distance, và cosine_similarity_raw.
     """
     if candidates.empty:
         return candidates.copy()
@@ -147,9 +147,13 @@ def compute_semantic_similarity(
         errors="coerce",
     ).fillna(0.0)
 
+    # Thêm raw fields cho mục đích audit
+    result["faiss_squared_l2_distance"] = distances
+    
     raw_similarity = 1.0 - (distances / 2.0)
+    result["cosine_similarity_raw"] = raw_similarity.round(6)
 
-    result["semantic_similarity"] = (
+    result["semantic_score_relative"] = (
         _min_max_normalize(raw_similarity)
         .clip(0.0, 1.0)
         .round(6)
@@ -392,9 +396,9 @@ def compute_final_score(
 
     Công thức mặc định:
 
-        0.50 * cross_encoder_score
-        + 0.25 * semantic_similarity
-        + 0.15 * popularity_score
+        0.55 * cross_encoder_score
+        + 0.25 * semantic_score_relative
+        + 0.10 * popularity_score
         + 0.10 * rule_score
     """
     if candidates.empty:
@@ -402,7 +406,7 @@ def compute_final_score(
 
     required_score_columns = {
         "cross_encoder_score",
-        "semantic_similarity",
+        "semantic_score_relative",
         "popularity_score",
         "rule_score",
     }
@@ -425,7 +429,7 @@ def compute_final_score(
         weight_cross_encoder
         * result["cross_encoder_score"]
         + weight_semantic
-        * result["semantic_similarity"]
+        * result["semantic_score_relative"]
         + weight_popularity
         * result["popularity_score"]
         + weight_rule
@@ -460,7 +464,7 @@ def rerank_candidates(
     Pipeline:
 
         faiss_distance
-        → semantic_similarity
+        → semantic_score_relative
         → popularity_score
         → rule_score
         → cross_encoder_score
@@ -595,7 +599,7 @@ def rank_without_ce(
 
     # Tính final_score với 3 factors (redistribute weights)
     result["final_score"] = (
-        result["semantic_similarity"] * WEIGHT_SEMANTIC_NO_CE
+        result["semantic_score_relative"] * WEIGHT_SEMANTIC_NO_CE
         + result["popularity_score"] * WEIGHT_POPULARITY_NO_CE
         + result["rule_score"] * WEIGHT_RULE_NO_CE
     ).round(6)

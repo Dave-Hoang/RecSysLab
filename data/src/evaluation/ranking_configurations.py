@@ -26,7 +26,7 @@ REQUIRED_CANDIDATE_COLUMNS = {
 }
 
 SCORE_COLUMNS = {
-    "semantic_similarity",
+    "semantic_score_relative",
     "popularity_score",
     "rule_score",
     "cross_encoder_score",
@@ -156,7 +156,7 @@ def _add_rank_based_semantic_score(
     candidate_count = len(frame)
 
     if candidate_count == 1:
-        frame["semantic_similarity"] = 1.0
+        frame["semantic_score_relative"] = 1.0
     else:
         minimum_rank = frame["retrieval_rank"].min()
         maximum_rank = frame["retrieval_rank"].max()
@@ -164,9 +164,9 @@ def _add_rank_based_semantic_score(
         rank_range = maximum_rank - minimum_rank
 
         if rank_range == 0:
-            frame["semantic_similarity"] = 1.0
+            frame["semantic_score_relative"] = 1.0
         else:
-            frame["semantic_similarity"] = (
+            frame["semantic_score_relative"] = (
                 1.0
                 - (
                     frame["retrieval_rank"]
@@ -175,9 +175,9 @@ def _add_rank_based_semantic_score(
                 / rank_range
             )
 
-    frame["semantic_similarity"] = (
+    frame["semantic_score_relative"] = (
         pd.to_numeric(
-            frame["semantic_similarity"],
+            frame["semantic_score_relative"],
             errors="coerce",
         )
         .fillna(0.0)
@@ -212,14 +212,14 @@ def _add_semantic_score(
         frame["faiss_distance"] = pd.NA
         frame = _add_rank_based_semantic_score(frame)
 
-    if "semantic_similarity" not in frame.columns:
+    if "semantic_score_relative" not in frame.columns:
         raise ValueError(
-            "Không tạo được cột semantic_similarity."
+            "Không tạo được cột semantic_score_relative."
         )
 
-    frame["semantic_similarity"] = (
+    frame["semantic_score_relative"] = (
         pd.to_numeric(
-            frame["semantic_similarity"],
+            frame["semantic_score_relative"],
             errors="coerce",
         )
         .fillna(0.0)
@@ -385,7 +385,7 @@ def rank_faiss_only(
     frame["rule_score"] = 0.0
     frame["cross_encoder_score"] = 0.0
     frame["evaluation_score"] = (
-        frame["semantic_similarity"]
+        frame["semantic_score_relative"]
     )
 
     result = (
@@ -424,7 +424,7 @@ def rank_hybrid_no_ce(
 
     frame["evaluation_score"] = (
         weights["semantic"]
-        * frame["semantic_similarity"]
+        * frame["semantic_score_relative"]
         + weights["popularity"]
         * frame["popularity_score"]
         + weights["rule"]
@@ -490,7 +490,7 @@ def rank_hybrid_with_ce(
         weights["cross_encoder"]
         * frame["cross_encoder_score"]
         + weights["semantic"]
-        * frame["semantic_similarity"]
+        * frame["semantic_score_relative"]
         + weights["popularity"]
         * frame["popularity_score"]
         + weights["rule"]

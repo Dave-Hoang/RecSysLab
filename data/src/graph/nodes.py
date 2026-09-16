@@ -25,6 +25,7 @@ from src.config import (
     GROQ_ROUTER_MODEL,
     GROQ_EXPANSION_MODEL,
     USE_GROQ_FOR_ROUTER,
+    TEST_MODE,
 )
 from src.graph.config import (
     CE_CONFIDENCE_THRESHOLD,
@@ -64,7 +65,7 @@ def _get_gemini_llm() -> ChatGoogleGenerativeAI:
         load_dotenv(ENV_PATH)
         _llm_gemini = ChatGoogleGenerativeAI(
             model=GEMINI_MODEL_NAME,
-            temperature=LLM_TEMPERATURE,
+            temperature=0.0 if TEST_MODE else LLM_TEMPERATURE,
         )
     return _llm_gemini
 
@@ -84,7 +85,7 @@ def _get_router_llm():
         try:
             _llm_groq_router = ChatGroq(
                 model=GROQ_ROUTER_MODEL,
-                temperature=LLM_TEMPERATURE,
+                temperature=0.0 if TEST_MODE else LLM_TEMPERATURE,
                 api_key=api_key
             )
         except Exception:
@@ -108,7 +109,7 @@ def _get_expansion_llm():
         try:
             _llm_groq_expansion = ChatGroq(
                 model=GROQ_EXPANSION_MODEL,
-                temperature=LLM_TEMPERATURE,
+                temperature=0.0 if TEST_MODE else LLM_TEMPERATURE,
                 api_key=api_key
             )
         except Exception:
@@ -315,6 +316,8 @@ def fast_retrieval_node(
 # NODE 3: QUERY EXPANSION
 # ============================================================
 
+_expansion_cache: dict[str, str] = {}
+
 def expansion_node(state: RecSysState) -> dict:
     """
     Node 3: Query Expansion — Viết lại query mơ hồ thành mô tả nội dung phim.
@@ -349,6 +352,22 @@ def expansion_node(state: RecSysState) -> dict:
     previous_expanded = state.get("previous_expanded_query")
     llm = _get_expansion_llm()
 
+    # Dùng cache nếu đang ở chế độ TEST_MODE để đảm bảo deterministic
+    cache_key = f"{original_query}_{retry_count}_{previous_expanded}"
+    if TEST_MODE and cache_key in _expansion_cache:
+        expanded_query = _expansion_cache[cache_key]
+        elapsed = time.perf_counter() - start_time
+        return {
+            "expanded_query": expanded_query,
+            "search_query": expanded_query,
+            "previous_expanded_query": expanded_query,
+            "execution_path": state.get("execution_path", []) + ["expand"],
+            "timings": {
+                **state.get("timings", {}),
+                "expand": round(elapsed, 4),
+            },
+        }
+
     # ── Chọn prompt tùy theo lần đầu hay retry ──
     if retry_count > 0 and previous_expanded:
         # Retry: dùng EXPANSION_RETRY_PROMPT với context lần trước
@@ -374,6 +393,9 @@ def expansion_node(state: RecSysState) -> dict:
 
         # Loại bỏ dấu ngoặc kép bao quanh (nếu LLM trả về)
         expanded_query = expanded_query.strip('"').strip("'")
+        
+        if TEST_MODE:
+            _expansion_cache[cache_key] = expanded_query
 
     except Exception:
         # Fallback: dùng query gốc nếu expansion thất bại
@@ -571,7 +593,7 @@ def quality_gate_node(state: RecSysState) -> dict:
     retry_count = state.get("retry_count", 0)
 
     # ── Tính mean scores ──
-    mean_semantic = ranked["semantic_similarity"].mean()
+    mean_semantic = ranked["semantic_score_relative"].mean()
 
     if used_ce:
         # Quality Path: đánh giá bằng CE score

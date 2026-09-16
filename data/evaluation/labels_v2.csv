@@ -1,0 +1,376 @@
+query_id,movieId,relevance,notes
+Q001,1748,0,
+Q001,3917,2,
+Q001,80846,2,
+Q001,97188,2,
+Q001,99912,2,
+Q001,100810,2,
+Q001,142598,2,
+Q001,168420,0,
+Q001,226888,2,
+Q002,1307,2,
+Q002,2671,2,
+Q002,4817,2,
+Q002,4823,2,
+Q002,4992,2,
+Q002,6155,2,
+Q002,6942,2,
+Q002,67087,1,
+Q002,93892,2,
+Q003,47,2,
+Q003,593,2,
+Q003,2181,2,
+Q003,74458,2,
+Q003,78349,2,
+Q003,81591,2,
+Q003,101088,2,
+Q003,108729,2,
+Q004,5218,2,
+Q004,6377,2,
+Q004,50872,2,
+Q004,71264,1,
+Q004,72226,1,
+Q004,168418,2,
+Q004,177765,2,
+Q004,189873,2,
+Q005,924,2,
+Q005,1301,2,
+Q005,4874,1,
+Q005,34405,2,
+Q005,52328,2,
+Q005,104841,2,
+Q005,109487,2,
+Q005,204352,2,
+Q005,249122,1,
+Q006,1242,2,
+Q006,4033,1,
+Q006,4463,1,
+Q006,5221,1,
+Q006,6439,2,
+Q006,56788,1,
+Q006,98154,1,
+Q006,170705,2,
+Q006,208703,2,
+Q006,278578,2,
+Q007,51167,2,
+Q007,180555,0,
+Q007,186305,2,
+Q007,190745,0,
+Q007,192383,2,
+Q007,197885,2,
+Q007,203904,1,
+Q007,275503,2,
+Q008,68954,2,
+Q008,92259,2,
+Q008,109483,0,
+Q008,127202,2,
+Q008,161922,1,
+Q008,194448,2,
+Q008,199237,2,
+Q008,228157,2,
+Q009,117861,1,
+Q009,127202,1,
+Q009,142222,2,
+Q009,165549,2,
+Q009,165551,1,
+Q009,165937,2,
+Q009,168610,2,
+Q009,257037,2,
+Q010,524,2,
+Q010,3882,1,
+Q010,3916,2,
+Q010,5267,2,
+Q010,7263,2,
+Q010,8937,1,
+Q010,31225,2,
+Q010,48161,2,
+Q010,151455,2,
+Q010,183087,1,
+Q011,2155,2,
+Q011,3078,2,
+Q011,33621,1,
+Q011,72113,2,
+Q011,80693,2,
+Q011,96592,1,
+Q011,103048,2,
+Q011,239490,2,
+Q012,6711,2,
+Q012,81562,2,
+Q012,81791,2,
+Q012,89638,2,
+Q012,105531,2,
+Q012,108566,2,
+Q012,116155,2,
+Q012,134214,1,
+Q012,170405,1,
+Q012,189809,1,
+Q013,1301,0,
+Q013,2232,1,
+Q013,4874,1,
+Q013,4878,2,
+Q013,4975,2,
+Q013,52328,1,
+Q013,68237,2,
+Q013,113741,2,
+Q013,115713,2,
+Q014,1854,2,
+Q014,2671,1,
+Q014,6837,0,
+Q014,6942,0,
+Q014,70183,2,
+Q014,88163,1,
+Q014,109483,0,
+Q014,113829,1,
+Q014,134393,0,
+Q015,1265,1,
+Q015,104374,2,
+Q015,107130,1,
+Q015,139419,0,
+Q015,163134,2,
+Q015,239490,2,
+Q015,262129,2,
+Q016,22,2,
+Q016,67255,1,
+Q016,166568,0,
+Q016,190939,1,
+Q016,194959,2,
+Q016,213397,0,
+Q016,218867,0,
+Q016,279412,2,
+Q017,924,2,
+Q017,3503,2,
+Q017,4874,1,
+Q017,5881,2,
+Q017,26578,0,
+Q017,104841,1,
+Q017,109487,2,
+Q018,47,2,
+Q018,50,2,
+Q018,1617,1,
+Q018,1625,2,
+Q018,2762,2,
+Q018,4226,2,
+Q018,31427,1,
+Q018,74458,2,
+Q018,80846,1,
+Q018,176929,1,
+Q019,924,2,
+Q019,1356,1,
+Q019,1876,2,
+Q019,26285,1,
+Q019,36363,1,
+Q019,68358,1,
+Q019,81847,0,
+Q019,102445,1,
+Q019,109487,2,
+Q020,1,2,
+Q020,2804,0,
+Q020,3114,2,
+Q020,78499,2,
+Q020,115879,2,
+Q020,120474,2,
+Q020,201588,2,
+Q021,858,2,
+Q021,1213,2,
+Q021,1221,2,
+Q021,2023,2,
+Q021,8607,1,
+Q021,25934,1,
+Q021,53993,0,
+Q021,102407,1,
+Q022,3471,0,
+Q022,4975,2,
+Q022,34405,0,
+Q022,45003,1,
+Q022,45722,0,
+Q022,59715,1,
+Q022,74458,2,
+Q022,122896,0,
+Q022,152077,2,
+Q022,222011,0,
+Q023,1331,0,
+Q023,1982,2,
+Q023,2867,1,
+Q023,3081,1,
+Q023,6290,2,
+Q023,7289,2,
+Q023,45852,2,
+Q023,74370,2,
+Q023,75395,2,
+Q023,85788,0,
+Q023,93819,0,
+Q023,97785,1,
+Q024,6377,2,
+Q024,42734,1,
+Q024,72356,2,
+Q024,134853,2,
+Q024,158872,0,
+Q024,163809,1,
+Q024,168418,2,
+Q024,180987,2,
+Q024,189873,2,
+Q024,286903,2,
+Q025,7158,2,
+Q025,59118,2,
+Q025,64716,2,
+Q025,78039,0,
+Q025,82463,2,
+Q025,95088,2,
+Q025,134214,2,
+Q025,168610,2,
+Q025,168712,0,
+Q025,288269,0,
+Q026,2723,1,
+Q026,5053,0,
+Q026,8376,0,
+Q026,34150,2,
+Q026,59014,0,
+Q026,59315,2,
+Q026,81564,1,
+Q026,89745,2,
+Q027,7361,2,
+Q027,7371,2,
+Q027,44191,1,
+Q027,74416,1,
+Q027,79132,2,
+Q027,86898,2,
+Q027,143367,2,
+Q027,190555,1,
+Q027,202433,2,
+Q028,1875,2,
+Q028,3954,2,
+Q028,46578,2,
+Q028,109848,0,
+Q028,140110,2,
+Q028,160571,1,
+Q028,188623,0,
+Q028,275503,1,
+Q029,102286,1,
+Q029,133185,2,
+Q029,180555,0,
+Q029,187541,2,
+Q029,189873,2,
+Q029,193942,2,
+Q029,193960,1,
+Q029,194448,1,
+Q029,243208,2,
+Q030,2324,2,
+Q030,7361,2,
+Q030,39427,0,
+Q030,47099,1,
+Q030,81562,1,
+Q030,92259,1,
+Q030,104374,2,
+Q030,113604,0,
+Q030,165549,2,
+Q030,165551,2,
+Q030,236991,1,
+Q001,183869,2,"Hereditary is a quintessential dark supernatural horror movie, dealing with occult themes, demonic possession, and terrifying supernatural forces."
+Q001,8507,1,"While 'Freaks' is a classic horror film with a dark, unsettling atmosphere, it is generally classified as a pre-Code psychological horror/drama rather than a supernatural horror movie, as its horror stems from human nature and reality rather than supernatural elements."
+Q001,26717,2,"""Begotten"" is an experimental, avant-garde dark horror film heavily rooted in surreal, apocalyptic, and supernatural themes, making it a fitting match for dark supernatural horror."
+Q001,3676,2,"Eraserhead is a quintessential dark and surreal supernatural horror movie, fitting the user's request for dark horror themes."
+Q002,118814,2,"The movie 'Playing It Cool (2014)' belongs to the genres Comedy and Romance, which perfectly matches the user's query for 'romantic comedy movies'."
+Q002,33145,2,"The movie 'A Lot Like Love' (2005) is a classic romantic comedy featuring elements of both comedy and romance, making it a perfect match for the user's query."
+Q002,4639,2,"America's Sweethearts (2001) is a romantic comedy movie, fitting the user's explicit query perfectly with matching genres of Comedy and Romance."
+Q004,160874,1,"While 'Life, Animated' features 'Animation' and is family-friendly, it is a documentary about a real person with autism using Disney films to communicate, rather than a traditional animated family feature film."
+Q004,286903,2,"Elemental (2023) is an animated film produced by Pixar, featuring themes suitable for children and families, making it a perfect match for the user's query."
+Q004,68954,2,"Up (2009) is an animated film produced by Pixar, making it a perfect fit for the 'animated family movies' query, and it also features genres like Adventure and Children/Drama suitable for family audiences."
+Q005,260,2,"Star Wars: Episode IV - A New Hope is a quintessential science fiction space movie featuring space travel, futuristic technology, and science fiction themes, perfectly matching the user's query."
+Q005,68358,2,"Star Trek (2009) is a quintessential science fiction space movie featuring space exploration, starships, and futuristic technology, perfectly matching the user's query."
+Q006,3753,2,"The movie 'The Patriot' (2000) is a historical war drama set during the American Revolutionary War, perfectly matching all the elements of the user's query."
+Q006,110,2,"Braveheart is a quintessential historical war drama set during the First War of Scottish Independence, perfectly matching all the elements of the user's query."
+Q006,163645,2,Hacksaw Ridge (2016) is a biographical historical war drama that directly matches all aspects of the user's query.
+Q007,190555,2,"Searching (2018) is a deeply emotional drama centered around a father desperately searching for his missing son, perfectly matching the themes of the user's query."
+Q007,3967,2,"Billy Elliot is a poignant drama that deeply explores the strained and ultimately emotional relationship between a widowed father and his son, who wants to be a ballet dancer, perfectly matching the user's request for a sad movie about a father and son."
+Q007,177231,1,"While 'Brad's Status' features a central father-son dynamic and has emotional, poignant moments, it is primarily classified as a comedy-drama rather than a strictly 'sad movie' about a father and son."
+Q007,166705,2,"Fences is a powerful and deeply emotional drama that heavily centers on the complex, often painful relationship between a father and his son."
+Q008,81845,1,"While 'The King's Speech' is an emotional drama that features a powerful and moving central friendship between King George VI and his speech therapist Lionel Logue, it is primarily focused on overcoming a speech impediment and historical context rather than being universally categorized as a friendship-centric movie."
+Q008,163909,1,"Divines (2016) is a powerful, emotional drama centered around a complex friendship between two young women in the banlieues of Paris. While it fits the themes of 'emotional' and 'friendship', it is also a gritty crime-drama about drug dealing, which differs slightly from traditional heartwarming friendship films."
+Q008,190555,1,"While 'Searching' (2018) is a powerful emotional drama, its central theme revolves around a father searching for his missing daughter (family relationship/parental love) rather than friendship."
+Q009,190555,2,"Searching (2018) is a drama that deeply explores themes of grief and loss, centering on a father searching for his missing daughter while coping with the recent death of his wife."
+Q009,183869,2,"Hereditary (2018) is a deeply thematic movie about grief, loss, and the devastating psychological impact of trauma and family tragedy, making it highly relevant to the user's query."
+Q010,72641,2,"The movie 'The Blind Side' (2009) is a well-known inspirational sports drama based on a true story, perfectly matching the user's query."
+Q011,130628,2,"Boys (2014) is a Dutch drama film that centers on a 15-year-old track athlete experiencing his first love during a summer training camp, making it a classic coming-of-age story."
+Q011,101415,2,"The movie 'The First Time' (2012) is a quintessential coming-of-age teen romantic comedy-drama that centers around high school students navigating the emotional complexities of first love and growing up over a single weekend, making it a perfect match for the user's query."
+Q012,212373,2,"The movie deeply explores themes of loneliness, isolation, existential dread, and the human psychological condition, making it a strong match for the user's query."
+Q012,86320,2,"Melancholia (2011) deeply explores themes of profound depression, emotional isolation, and existential loneliness against the backdrop of an impending planetary collision, making it a strong thematic match for the user's query."
+Q012,162414,2,"Moonlight is a profound drama that deeply explores themes of loneliness, isolation, alienation, and the struggle for human connection across three distinct chapters of a young man's life."
+Q013,55908,2,"The movie is a quintessential intellectual and psychological sci-fi film that takes place entirely in one room, focusing on deep philosophical and scientific dialogue about a man claiming to be a prehistoric caveman surviving for 14,000 years."
+Q013,79132,2,"Inception is a quintessential psychological sci-fi movie that heavily explores concepts of the mind, dreams, memory, and reality, perfectly matching the user's query."
+Q013,84152,2,"Limitless is a psychological sci-fi thriller that explores the psychological effects and heightened cognitive abilities gained from a revolutionary nootropic drug, perfectly fitting the user's query."
+Q015,164179,1,"While 'Arrival' is a deeply emotional sci-fi drama, it deals with non-linear perception of time rather than traditional time travel, making it only partially relevant to the user's specific request for a 'time travel movie'."
+Q015,115680,1,"While 'Time Lapse' is a sci-fi thriller about time (specifically a camera taking pictures of the future), it focuses heavily on paranoia, greed, and suspense among roommates rather than being primarily known for an emotional story."
+Q015,1721,0,Titanic (1997) is a historical romance drama about the 1912 sinking of the ship and does not feature time travel.
+Q015,109487,2,"Interstellar features time dilation and space travel which function as time manipulation elements, and it is deeply focused on an emotional story about the bond between a father and his daughter."
+Q019,164179,2,"Arrival (2016) is a critically acclaimed cerebral sci-fi film that deals with complex scientific and philosophical themes, time, and space, making it one of the closest thematic matches to Interstellar."
+Q019,79132,2,"Inception is directed by Christopher Nolan, the same director as Interstellar, and shares key themes of complex high-concept sci-fi, mind-bending plots, stunning visual effects, and emotional depth."
+Q019,52328,2,"Sunshine (2007) is an exceptional match for fans of Interstellar. It is a visually stunning, tense sci-fi drama about a crew of astronauts on a desperate mission to save a dying sun/Earth, sharing major thematic and aesthetic similarities with Interstellar."
+Q021,4262,2,"Scarface (1983) is a classic crime drama that explores the rise and fall of a mob figure, sharing major thematic elements, tone, and genre with The Godfather."
+Q021,4034,1,"While 'Traffic' shares the crime and drama genres and deals with organized crime (drug cartels) similar to 'The Godfather', it focuses on multiple perspectives of the modern war on drugs rather than the intimate, epic saga of a specific criminal dynasty."
+Q022,4226,2,"Memento is a critically acclaimed psychological thriller and mystery that, much like Shutter Island, heavily features unreliable narration, a protagonist grappling with a distorted sense of reality, and mind-bending plot twists."
+Q022,2762,2,"The Sixth Sense shares key thematic elements with Shutter Island, particularly being a psychological thriller with a heavy atmosphere, mystery, and a famous mind-bending twist ending."
+Q022,4878,2,"Donnie Darko shares a deeply psychological, mind-bending tone with Shutter Island, featuring unreliable narration, themes of mental illness, mystery, and reality-warping twists that appeal to fans of psychological thrillers."
+Q022,4848,2,"Mulholland Drive shares strong thematic similarities with Shutter Island, including psychological mystery, a shifting perception of reality, neo-noir elements, and mind-bending plot twists that leave audiences questioning what is real."
+Q023,185029,2,"A Quiet Place is a horror movie that features blind alien monsters with acute hearing as the threat, completely avoiding ghosts, perfectly matching the user's constraint."
+Q023,183869,2,"Hereditary is a critically acclaimed horror movie that focuses on psychological trauma, grief, and demonic/occult themes rather than traditional ghosts, perfectly satisfying the user's constraint of a horror movie without ghosts."
+Q023,59727,2,"The movie 'The Strangers' (2008) is a horror/thriller film focused on home-invasion by human killers, containing no ghosts, thereby perfectly matching the user's explicit constraint."
+Q023,279182,2,"Smile (2022) is a horror movie that deals with a malevolent supernatural entity and psychological trauma, but it does not feature ghosts, making it a strong match for the user's constraints."
+Q024,68954,2,"Up is a family-friendly animation that falls under Adventure, Animation, Children, and Drama, fulfilling all criteria and avoiding adult comedy."
+Q024,364,2,"The Lion King (1994) is a classic family animation film that focuses on adventure, drama, and musical elements without being an adult comedy, perfectly matching the user's criteria."
+Q024,224264,2,"Connected (2020) is a family-friendly animated sci-fi adventure film. Although it has a comedy genre tag, it is a wholesome family comedy rather than an 'adult comedy', making it a great match for the user's request."
+Q024,213207,1,"While 'Onward' is a family animation film which fits the primary request, its genres include 'Comedy', meaning it has comedic elements, though it is not an 'adult comedy'."
+Q025,165549,2,"Manchester by the Sea is a critically acclaimed sad drama that focuses heavily on grief, family tragedy, and loss, with no romantic plotline, perfectly matching all constraints of the user's query."
+Q025,183869,1,"Hereditary is a very sad and devastating drama about grief and trauma, and it is not a romance. However, it is primarily classified as a horror movie rather than a straightforward drama, which makes it only partially relevant to the user's specific intent."
+Q025,162414,2,Moonlight is a critically acclaimed sad drama that focuses on the identity and life struggles of the protagonist rather than being a romance.
+Q025,129781,2,"""About Alex"" is a drama film about a group of friends gathering after the suicide of one of their college friends. It focuses heavily on themes of grief, mental health, and friendship, fitting the 'sad drama' criteria while not being a romance."
+Q026,204698,2,"Joker (2019) is a comic book/superhero-based movie that is famously known for its gritty, dark, and serious tone entirely devoid of the comedic elements typical of the superhero genre."
+Q026,115569,0,"Nightcrawler is a crime thriller about a sociopathic stringer, not a superhero movie."
+Q026,183869,0,"Hereditary is a psychological horror film, not a superhero movie."
+Q026,67197,0,"The user asked for a superhero movie, but 'Knowing (2009)' is a sci-fi thriller/drama about a teacher and numerical predictions, not a superhero movie."
+Q026,104879,0,"Prisoners (2013) is a crime drama, mystery, and thriller, not a superhero movie."
+Q027,108729,2,"Enemy (2013) is a psychological thriller known for its deeply ambiguous, complex narrative and symbolic imagery, making it a quintessential film that prompts extensive critical thought and analysis."
+Q027,204698,2,"Joker (2019) is a psychological character study that explores complex themes such as mental illness, societal neglect, the impact of the media, and class struggle, which naturally prompts deep reflection and discussion from viewers."
+Q027,6323,2,"Identity (2003) is a psychological thriller and mystery known for its complex, mind-bending plot involving multiple personalities and a twist ending that heavily engages the viewer and prompts deep thought about the nature of the human mind and identity."
+Q027,1464,2,"Lost Highway is a psychological neo-noir mystery directed by David Lynch, known for its complex, non-linear narrative, dream logic, and deeply philosophical themes about identity and guilt, making it a quintessential film for making viewers think deeply."
+Q028,68954,2,"Up is a heartwarming, entertaining, and visually delightful animated adventure that is well-suited for relaxing and unwinding after a long day of work."
+Q028,6377,2,"Finding Nemo is an animated, comedic, and lighthearted family adventure film, which perfectly fits the user's request for something light to watch after work."
+Q028,134853,2,"Inside Out is an animated, family-friendly comedy-adventure that is engaging and emotionally uplifting, making it a great lighthearted choice to unwind after work."
+Q028,81847,2,"Tangled is an animated, family-friendly musical comedy with a lighthearted tone, making it a perfect, stress-free watch to unwind after work."
+Q029,213207,2,"Onward (2020) is an animated family adventure film filled with comedy and fantasy, making it a perfect choice for a family movie night over the weekend."
+Q029,224264,2,"Connected (2020) is an animated family-friendly comedy with adventure and sci-fi elements, making it an ideal choice for a weekend movie with the family."
+Q029,52287,2,"Meet the Robinsons is a family-friendly animated film that appeals to all ages, making it a perfect choice for a weekend movie night with the family."
+Q029,68954,2,"Up (2009) is an acclaimed animated adventure film that appeals to all ages, making it a perfect choice for family viewing over the weekend."
+Q030,7147,2,"Big Fish is a deeply emotional drama that explores themes of family, mortality, and storytelling. Its poignant exploration of the relationship between a father and son leaves a lasting, memorable impact on viewers, perfectly fitting the user's request."
+Q030,55052,2,"Atonement is a powerful, deeply emotional drama known for its tragic romance and devastating ending that famously leaves a lasting impact on viewers for days."
+Q030,180095,2,"Wonder is a powerful, heartwarming drama known for evoking strong emotional responses and leaving a lasting impression on viewers, perfectly matching the user's request for an emotional movie that stays with them."
+Q030,192803,1,"While 'Bohemian Rhapsody' is a biographical drama that features emotionally powerful musical performances and a poignant ending, it is often seen more as a celebratory tribute to Freddie Mercury and Queen rather than a deeply devastating emotional film that stays with viewers for days, making it only partially aligned with the specific prompt."
+Q001,85788,2,The movie perfectly matches the query because it is a dark supernatural horror film about astral projection and demonic possession with an eerie atmosphere
+Q002,4973,2,The movie is a critically acclaimed romantic comedy that perfectly matches the query because it focuses on a whimsical love story and humorous situations
+Q004,224264,2,Animated family adventure about a quirky family saving the world together
+Q005,134130,2,Hard science fiction set on Mars about survival and rescue in space
+Q007,34155,2,Somber drama centered on a strained father and son relationship
+Q007,65188,2,Deeply sad documentary about a father told through a letter to his son
+Q008,1704,2,Emotional drama featuring a powerful and heartfelt friendship at its core
+Q012,168610,2,Meditative drama about grief loneliness and isolation through a ghost’s perspective
+Q015,106920,0,Emotional sci-fi romance about AI and loneliness without time travel
+Q015,166635,0,Sci-fi romance set on a spaceship without time travel elements
+Q015,113350,2,Time travel sci-fi driven by family love loss and emotional choices
+Q022,1617,1,Neo-noir crime thriller with complex plotting but not a direct Shutter Island match
+Q023,268732,2,Slasher horror with a human killer and no supernatural or ghost elements
+Q024,177765,2,Family-friendly animated film focused on heritage and emotion rather than adult humor
+Q025,168608,2,Somber drama about racism and trauma with family elements but not a romance
+Q025,194074,2,Emotional social drama about justice and identity with minimal romance focus
+Q025,188829,2,Heartbreaking drama about poverty and childhood with no romance storyline
+Q026,52328,0,Serious sci-fi thriller about saving the Sun without superhero elements
+Q026,168610,0,Meditative ghost drama without comedy and without superhero elements
+Q027,84152,1,Thriller about enhanced intelligence and ambition with some ethical questions
+Q027,115713,2,Philosophical sci-fi about AI consciousness manipulation and what makes us human
+Q027,113741,2,Mind-bending sci-fi about parallel realities choices and identity
+Q027,4878,2,Psychological sci-fi about fate time and existence with layered symbolism
+Q028,95088,2,Light indie comedy-drama with gentle sci-fi and a warm tone
+Q028,163809,2,Short animated fairy-tale journey with gentle mystery and cozy vibes
+Q028,114678,2,Feel-good travel comedy-drama about finding happiness with a light tone
+Q028,94959,2,Whimsical comedy-drama about young love with a gentle and colorful style
+Q029,163809,2,Short animated fairy-tale series suitable for family viewing with gentle themes
+Q029,260667,2,Family-centered animated musical about generational pressure and self-acceptance
+Q030,112552,2,Intense drama about ambition and abuse that leaves a lasting emotional impact

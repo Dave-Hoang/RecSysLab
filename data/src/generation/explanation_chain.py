@@ -89,7 +89,7 @@ def format_movies_for_llm(
     Chuyển Top-N ranked movies thành context text sạch cho LLM.
 
     Không truyền các score nội bộ như:
-    - semantic_similarity;
+    - semantic_score_relative;
     - popularity_score;
     - rule_score;
     - cross_encoder_score;

@@ -34,7 +34,7 @@ def render_movie_card(movie: dict, rank: int):
     rating_mean = movie.get("rating_mean")
     rating_count = movie.get("rating_count")
 
-    semantic = movie.get("semantic_similarity")
+    semantic = movie.get("semantic_score_relative")
     cross_encoder = movie.get("cross_encoder_score")
     final_score = movie.get("final_score")
 
@@ -70,7 +70,7 @@ def render_movie_card(movie: dict, rank: int):
     )
 
     render_score_bar(
-        "Semantic Similarity",
+        "Relative Semantic Score <span title='Giá trị 1.000 chỉ biểu thị đây là kết quả có độ khớp ngữ nghĩa cao nhất trong lô truy vấn hiện tại, không phải khớp tuyệt đối 100%'>ℹ️</span>",
         semantic,
     )
 

@@ -1,13 +1,56 @@
+# Data and Index
+data/faiss_movie_index/
+data/faiss_movie_index_refactored/
+data/ml-32m/
+*.faiss
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Jupyter/Notebooks
+.ipynb_checkpoints/
+
+# Caches and runtime outputs
 outputs/
-*.csv
 *.parquet
 *.npy
 *.pt
 *.pth
-.ipynb_checkpoints/
-*.env
-*.pyc
 *.pkl
-*.faiss
-*.txt
-!requirements.txt
+
+# DO NOT ignore *.csv globally. Explicitly ignore ml-32m data and allow evaluation/canonical data.
+# (ml-32m is already ignored by directory rule above)
+*.csv
+!data/evaluation/**/*.csv
+!data/evaluation/*.csv
+
+# Logs
+*.log
+
+# Temporary evaluation artifacts
+data/evaluation/annotation_queue_*.csv
+data/evaluation/candidates_for_labeling*.csv
+data/evaluation/label_coverage_report*.csv
+data/evaluation/retrieval_test_results*.csv
+data/evaluation/scored_predictions*.csv
+data/evaluation/agentic_benchmark_results*.csv
+data/evaluation/pairwise_evaluation*.csv
+logs/
+
+#Markdown artifacts
+implementation_plan_*
+phase*_check*.md
+phase6_final_report.md
+gemini_models.md
+how*

@@ -83,18 +83,21 @@ and cinematic style.
 
 Rules:
 1. Preserve the user's original intent completely.
-2. Translate social/emotional context into movie content descriptors.
-3. Output a single expanded query string, 20-40 words.
-4. Do NOT add movie titles.
-5. Write in English (for embedding model compatibility).
+2. Allowed:
+   - Preserve all genres explicitly stated by the user.
+   - Infer only high-level themes and tone directly supported by the request.
+   - A broad genre may be added only when it is a near-direct semantic restatement of the request (for example, "emotional movie" -> "drama").
+   - Do not introduce specific genres such as musical, romance, biopic, war, historical, sci-fi, horror, mystery, thriller, or fantasy unless the user explicitly requests them.
+3. Disallowed:
+   - Do NOT invent or add specific plot details, character names/professions, historical settings, music scores, soundtracks, cinematography, or visual styles unless explicitly mentioned in the original query.
+4. Output a single expanded query string, 20-40 words.
+5. Do NOT add movie titles.
+6. Write in English (for embedding model compatibility).
 
 Examples:
-- "watch with friend" → "entertaining buddy comedy action movies with strong friendship
-  themes, humorous dynamics, fun group viewing"
-- "date night movie" → "romantic comedy drama with heartwarming love story, charming
-  characters, feel-good atmosphere"
-- "something scary for Halloween" → "horror thriller movies with supernatural elements,
-  jump scares, dark atmosphere, Halloween themed"
+- "watch with friend" -> "entertaining buddy comedy action movies with strong friendship themes, humorous dynamics, fun group viewing"
+- "date night movie" -> "romantic comedy drama with heartwarming love story, charming characters, feel-good atmosphere"
+- "something scary for Halloween" -> "horror thriller movies with supernatural elements, jump scares, dark atmosphere, Halloween themed"
 
 Output ONLY the expanded query string, nothing else."""
 

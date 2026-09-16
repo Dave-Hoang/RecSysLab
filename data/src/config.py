@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 
 
@@ -120,9 +121,9 @@ RULE_SCORE_STEP = 0.10
 RULE_SCORE_MIN = -0.30
 RULE_SCORE_MAX = 0.30
 
-WEIGHT_CROSS_ENCODER = 0.50
+WEIGHT_CROSS_ENCODER = 0.55
 WEIGHT_SEMANTIC = 0.25
-WEIGHT_POPULARITY = 0.15
+WEIGHT_POPULARITY = 0.10
 WEIGHT_RULE = 0.10
 
 # ============================================================
@@ -227,3 +228,12 @@ GROQ_API_KEY_ENV_NAME = "GROQ_API_KEY"
 GROQ_ROUTER_MODEL = "openai/gpt-oss-20b"
 GROQ_EXPANSION_MODEL = "openai/gpt-oss-120b"
 USE_GROQ_FOR_ROUTER = True  # Flag bật/tắt linh hoạt
+
+# ============================================================
+# EVALUATION & TEST CONFIG
+# ============================================================
+
+# Chế độ TEST_MODE cho benchmark/evaluation
+# Khi TEST_MODE=True, LLM sẽ bị ép temperature=0 và các
+# query expansion sẽ được cache để đảm bảo tính tái lập (reproducibility)
+TEST_MODE = os.getenv("TEST_MODE", "false").lower() == "true"

@@ -21,7 +21,7 @@ DISPLAY_COLUMNS = [
     "final_rank",
     "title",
     "genres",
-    "semantic_similarity",
+    "semantic_score_relative",
     "popularity_score",
     "rule_score",
     "cross_encoder_score",

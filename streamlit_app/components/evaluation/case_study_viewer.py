@@ -18,7 +18,9 @@ DISPLAY_COLUMNS = [
     "genres",
     "evaluation_score",
     "relevance",
-    "semantic_similarity",
+    "semantic_score_relative",
+    "faiss_squared_l2_distance",
+    "cosine_similarity_raw",
     "cross_encoder_score",
 ]
 
@@ -26,7 +28,7 @@ DISPLAY_COLUMNS = [
 def _format_case_study_table(df: pd.DataFrame) -> pd.DataFrame:
     display = df[DISPLAY_COLUMNS].copy()
     display["evaluation_score"] = display["evaluation_score"].round(3)
-    display["semantic_similarity"] = display["semantic_similarity"].round(3)
+    display["semantic_score_relative"] = display["semantic_score_relative"].round(3)
     display["cross_encoder_score"] = display["cross_encoder_score"].round(3)
     return display
 

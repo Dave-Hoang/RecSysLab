@@ -1,0 +1,3 @@
+configuration,ndcg_at_5_mean,precision_at_5_mean,query_count
+Agentic,0.8433802018427277,0.92,30
+Classic,0.8087716656553446,0.9133333333333333,30

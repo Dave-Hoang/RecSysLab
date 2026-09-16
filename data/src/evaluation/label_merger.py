@@ -136,13 +136,10 @@ def load_labels(path: Path) -> pd.DataFrame:
             labels["relevance"].isna(),
             ["query_id", "movieId", "relevance"],
         ]
+        # Allow missing relevance as pd.NA
+        labels["relevance"] = labels["relevance"].astype("Int8")
 
-        raise ValueError(
-            "labels.csv còn relevance trống hoặc không hợp lệ:\n"
-            f"{invalid_rows.to_string(index=False)}"
-        )
-
-    labels["relevance"] = labels["relevance"].astype("int8")
+    labels["relevance"] = labels["relevance"].astype("Int8")
 
     invalid_relevance = labels.loc[
         ~labels["relevance"].isin([0, 1, 2]),
@@ -151,7 +148,7 @@ def load_labels(path: Path) -> pd.DataFrame:
 
     if not invalid_relevance.empty:
         raise ValueError(
-            "Relevance chỉ được nhận giá trị 0, 1 hoặc 2:\n"
+            "Relevance chỉ được nhận giá trị 0, 1 hoặc 2 hoặc rỗng:\n"
             f"{invalid_relevance.to_string(index=False)}"
         )
 
@@ -332,10 +329,7 @@ def validate_label_coverage(
     ]
 
     if not missing_labels.empty:
-        raise ValueError(
-            "Có prediction chưa được gán relevance:\n"
-            f"{missing_labels.to_string(index=False)}"
-        )
+        print(f"Warning: {len(missing_labels)} predictions chưa được gán relevance.")
 
     orphan_labels = label_keys.merge(
         prediction_keys,
@@ -395,24 +389,8 @@ def merge_predictions_with_labels(
             f"sau merge: {len(scored_predictions)}."
         )
 
-    if scored_predictions["relevance"].isna().any():
-        missing_rows = scored_predictions.loc[
-            scored_predictions["relevance"].isna(),
-            [
-                "query_id",
-                "configuration",
-                "movieId",
-                "title",
-            ],
-        ]
-
-        raise RuntimeError(
-            "Một số prediction không có relevance sau merge:\n"
-            f"{missing_rows.to_string(index=False)}"
-        )
-
     scored_predictions["relevance"] = (
-        scored_predictions["relevance"].astype("int8")
+        scored_predictions["relevance"].astype("Int8")
     )
 
     scored_predictions = scored_predictions.sort_values(

@@ -1,0 +1,2 @@
+﻿judge_model,total_explanations_evaluated,mean_faithfulness_score,mean_context_relevance_score,hallucinated_explanations_count,hallucination_rate_percent
+gemini-3.6-flash,150,0.9973,0.706,0,0.0

@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-09-14T15:09:36.958571",
+  "input_v1_count": 345,
+  "input_queue_count": 30,
+  "output_v2_count": 375,
+  "output_v2_sha256": "2e62e5983ed8e01414eb98c5dcb1d3b06d4064c346a33ef7a4a2467af6dbc8fd",
+  "annotator": "Duc Hoang",
+  "rubric_versions": [
+    "v1",
+    "v1.1"
+  ]
+}

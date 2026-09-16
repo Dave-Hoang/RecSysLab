@@ -132,8 +132,9 @@ class MovieRecommendation(BaseModel):
     rating_mean: float | None = None
     rating_count: float | None = None
 
-    faiss_distance: float | None = None
-    semantic_similarity: float | None = None
+    faiss_squared_l2_distance: float | None = None
+    cosine_similarity_raw: float | None = None
+    semantic_score_relative: float | None = None
     popularity_score: float | None = None
     rule_score: float | None = None
     cross_encoder_score: float | None = None
