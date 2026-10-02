@@ -128,16 +128,7 @@ def retrieve_movies_with_score(
     k: int = RETRIEVAL_TOP_K,
 ) -> list[dict]:
     """
-    Lấy movie candidates cùng FAISS distance.
-
-    Lưu ý:
-        Giá trị trả về từ similarity_search_with_score() của FAISS
-        trong cấu hình hiện tại nên được hiểu là distance:
-
-            distance thấp hơn → kết quả gần query hơn.
-
-        Không gọi giá trị này là semantic_score vì tên đó dễ gây
-        hiểu nhầm rằng score càng cao càng tốt.
+    Lấy movie candidates cùng FAISS score.
 
     Args:
         vector_store:
@@ -149,7 +140,8 @@ def retrieve_movies_with_score(
 
     Returns:
         Danh sách candidate dictionaries có thêm:
-        - faiss_distance
+        - faiss_similarity
+        - faiss_distance (để tương thích ngược)
     """
     cleaned_query = query.strip()
 
@@ -165,8 +157,12 @@ def retrieve_movies_with_score(
     )
 
     candidates: list[dict] = []
+    
+    # Xác định metric đang sử dụng dựa trên distance_strategy
+    strategy_str = str(getattr(vector_store, "distance_strategy", ""))
+    is_similarity = "COSINE" in strategy_str or "MAX_INNER_PRODUCT" in strategy_str
 
-    for rank, (document, distance) in enumerate(
+    for rank, (document, score) in enumerate(
         results,
         start=1,
     ):
@@ -175,7 +171,11 @@ def retrieve_movies_with_score(
             rank=rank,
         )
 
-        candidate["faiss_distance"] = float(distance)
+        score_val = float(score)
+        if is_similarity:
+            candidate["faiss_similarity"] = score_val
+        else:
+            candidate["faiss_distance"] = score_val
 
         candidates.append(candidate)
 

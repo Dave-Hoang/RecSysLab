@@ -83,3 +83,38 @@ def test_predict_relevance_scores_returns_raw_logit():
     # Nếu bị dính sigmoid, điểm luôn nằm trong (0, 1)
     # Nếu là raw logit, điểm cho cặp này sẽ rất âm (ví dụ: < -5.0)
     assert scores[0] < 0.0 or scores[0] > 1.0, f"Score {scores[0]} lies in [0, 1], which indicates Sigmoid might be active!"
+
+
+@patch('src.ranking.hybrid_ranker.predict_relevance_scores')
+def test_rank_with_ce_pre_ranking_filters_candidates(mock_predict):
+    """
+    Test 5: Đảm bảo pre-ranking lọc thô từ N xuống pre_rank_top_k trước khi gọi Cross-Encoder.
+    """
+    from src.ranking.hybrid_ranker import rank_with_ce
+
+    mock_predict.side_effect = lambda query, documents, cross_encoder: np.zeros(len(documents))
+
+    candidates = pd.DataFrame({
+        "rank": [1, 2, 3, 4, 5],
+        "movieId": [101, 102, 103, 104, 105],
+        "title": [f"Movie {i}" for i in range(1, 6)],
+        "genres": ["Action"] * 5,
+        "rating_mean": [3.0, 4.5, 2.0, 5.0, 4.0],
+        "rating_count": [100, 500, 50, 1000, 300],
+        "faiss_distance": [0.2, 0.1, 0.5, 0.05, 0.15],
+        "page_content": [f"Content {i}" for i in range(1, 6)],
+    })
+
+    # pre_rank_top_k = 2 -> Chỉ giữ lại 2 candidate hàng đầu
+    result = rank_with_ce(
+        candidates_df=candidates,
+        query="action movie",
+        pre_rank_top_k=2,
+    )
+
+    assert len(result) == 2
+    # Verify predict_relevance_scores was called with only 2 documents
+    mock_predict.assert_called_once()
+    called_docs = mock_predict.call_args[1]["documents"]
+    assert len(called_docs) == 2
+

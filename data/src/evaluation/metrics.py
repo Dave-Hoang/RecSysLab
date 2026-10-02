@@ -337,7 +337,7 @@ def _build_query_label_pool(
 
 
 def ndcg_at_k(
-    ranked_relevances: Iterable[int | float | type(pd.NA)],
+    ranked_relevances: Iterable[int | float | None],
     ideal_relevances: Iterable[int | float],
     k: int,
     strict_mode: bool = True,

@@ -31,6 +31,7 @@ from src.graph.config import (
     CE_CONFIDENCE_THRESHOLD,
     FINAL_RECOMMENDATION_TOP_K,
     MAX_RETRIES,
+    PRE_RANK_TOP_K,
     RETRIEVAL_TOP_K,
     SEMANTIC_CONFIDENCE_THRESHOLD,
 )
@@ -518,6 +519,7 @@ def full_reranking_node(
     expanded_query = state["search_query"]  # For FAISS (broad recall)
     original_query = state["original_query"]  # For CE (precision)
     top_n = state.get("top_n", FINAL_RECOMMENDATION_TOP_K)
+    effective_pre_rank_k = max(PRE_RANK_TOP_K, top_n)
 
     # Bước 1: FAISS retrieval với expanded query
     # Expanded query giúp retrieve candidates đa dạng hơn
@@ -528,13 +530,15 @@ def full_reranking_node(
     )
     candidates_df = pd.DataFrame(candidates)
 
-    # Bước 2: Full reranking (4-factor + Cross-Encoder)
-    # Cross-Encoder dùng original query để đánh giá chính xác
-    # intent gốc, tránh semantic drift từ expansion
+    # Bước 2: Full reranking (Pre-rank lọc thô 3 yếu tố -> Cross-Encoder 4-factor)
+    # Pre-rank lọc ra PRE_RANK_TOP_K ứng viên tiềm năng nhất để giảm tải CE.
+    # Cross-Encoder dùng original query để đánh giá chính xác intent gốc,
+    # tránh semantic drift từ expansion.
     ranked = rank_with_ce(
         candidates_df=candidates_df,
         query=original_query,
         cross_encoder=cross_encoder,
+        pre_rank_top_k=effective_pre_rank_k,
     )
     ranked = ranked.head(top_n).reset_index(drop=True)
 

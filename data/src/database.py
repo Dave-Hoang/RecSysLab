@@ -221,6 +221,7 @@ import pandas as pd
 from langchain_core.documents import Document
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
+from langchain_community.vectorstores.utils import DistanceStrategy
 from pathlib import Path
 
 # 1. Định nghĩa các đường dẫn file 
@@ -276,9 +277,12 @@ def build_and_persistence_pipeline():
     print("\n[*] Đang tiến hành tạo Embedding và nạp vào cấu trúc FAISS...")
     print("[LƯU Ý]: Quá trình này chạy trên GPU CUDA nên sẽ rất nhanh, hãy đợi trong giây lát...")
     
-    # Sử dụng phép toán đo khoảng cách vô hướng (Inner Product) 
-    # Kết hợp với normalize_embeddings=True phía trên sẽ tương đương với Cosine Similarity
-    vector_store = FAISS.from_documents(documents, embedding_model)
+    # Sử dụng phép toán đo khoảng cách vô hướng (Inner Product / Cosine Similarity)
+    vector_store = FAISS.from_documents(
+        documents,
+        embedding_model,
+        distance_strategy=DistanceStrategy.COSINE,
+    )
     
     # Bước 5: Lưu trữ thư mục Index xuống local để tái sử dụng
     print(f"\n[*] Đang xuất và đóng gói dữ liệu xuống thư mục: {FAISS_SAVE_DIR}")

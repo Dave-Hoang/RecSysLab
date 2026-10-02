@@ -35,5 +35,7 @@ MAX_RETRIES: int = 1
 # Import từ config chính để giữ nhất quán
 from src.config import (
     FINAL_RECOMMENDATION_TOP_K,
+    PRE_RANK_TOP_K,
     RETRIEVAL_TOP_K,
 )
+
